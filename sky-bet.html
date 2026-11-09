@@ -8,6 +8,7 @@
 <meta property="og:title" content="Sky Bet migration · Paul Riley">
 <meta property="og:description" content="How Paul Riley merged two design teams to move 9 million Sky Bet customers onto one platform.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>(function(){var P=function(v){var m=/^(dark|light)(?:[.|](\d+))?$/.exec(v||"");return m?{t:m[1],ts:+(m[2]||0)}:null},c=[];try{c.push(P(new URLSearchParams(location.search).get("theme")))}catch(e){}try{c.push(P(localStorage.getItem("pr-theme")))}catch(e){}try{c.push(P(sessionStorage.getItem("pr-theme")))}catch(e){}try{var n=/pr-theme=([^;]+)/.exec(window.name||"");c.push(P(n&&n[1]))}catch(e){}c=c.filter(Boolean).sort(function(a,b){return b.ts-a.ts});if(c[0])document.documentElement.dataset.theme=c[0].t})();</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Young+Serif&amp;display=swap">
 <style>
@@ -353,7 +354,7 @@ section.snap.cq{max-width:760px !important;margin:0 auto !important;padding:48px
 .jm-meta .jm-line:has(.jm-tag){grid-template-columns:84px minmax(0,1fr) !important}
 .jm-hint{font-size:var(--fs-b) !important}
 </style>
-
+<style>html:not(.pr-ready) body,html:not(.pr-ready) body *{transition:none !important}</style>
 </head>
 <body>
 <div id="dc-root"></div>
@@ -542,10 +543,10 @@ class Component extends DCLogic {
       try { localStorage.setItem("pr-theme", v); } catch (e) {} try { sessionStorage.setItem("pr-theme", v); } catch (e) {}
       try { window.name = (window.name || "").replace(/pr-theme=[^;]*;?/, "") + "pr-theme=" + v + ";"; } catch (e) {} };
     const prApply = () => { const g = prGet(); if (g) { document.documentElement.dataset.theme = g.t; prSet(g.t, g.ts); } else { delete document.documentElement.dataset.theme; } };
-    prApply();
+    prApply(); requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("pr-ready")));
     try { const u = new URL(location.href); if (u.searchParams.has("theme")) { u.searchParams.delete("theme"); history.replaceState(history.state, "", u.pathname + u.search + u.hash); } } catch (e) {}
     if (!window.__prTheme) { window.__prTheme = true;
-      window.addEventListener("pageshow", prApply);
+      window.addEventListener("pageshow", prApply); window.addEventListener("storage", (e) => { if (!e.key || e.key === "pr-theme") prApply(); }); window.addEventListener("focus", prApply); document.addEventListener("visibilitychange", () => { if (!document.hidden) prApply(); });
       document.addEventListener("click", (e) => { const b = e.target.closest && e.target.closest("[data-theme-toggle]"); if (!b) return;
         const cur = document.documentElement.dataset.theme || (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         const next = cur === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; prSet(next); });
