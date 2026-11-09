@@ -187,6 +187,14 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 @media (max-width: 640px){#clients .cols-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 .work-row>span:first-child{font-size:clamp(28px,3.2vw,40px) !important}
 #about .cols-4 p,#about .cols-4 span{max-width:none !important}
+/* case study row hover: colour wipe behind the call to action */
+.work-row:hover,.work-row:focus-visible{background:transparent !important}
+.work-row .cta-t,.work-row:hover .cta-t{text-decoration:none !important}
+.work-row span:has(>.cta-t){position:relative;isolation:isolate;align-self:flex-start;padding:6px 10px;margin-left:-10px;transition:color .35s cubic-bezier(.16,1,.3,1)}
+.work-row span:has(>.cta-t)::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.work-row:hover span:has(>.cta-t)::before,.work-row:focus-visible span:has(>.cta-t)::before{transform:scaleX(1)}
+.work-row:hover span:has(>.cta-t),.work-row:hover .cta-t,.work-row:hover .arr,.work-row:focus-visible span:has(>.cta-t),.work-row:focus-visible .cta-t,.work-row:focus-visible .arr{color:var(--bg) !important}
+@media (prefers-reduced-motion: reduce){.work-row span:has(>.cta-t),.work-row span:has(>.cta-t)::before{transition:none}}
 </style>
 
 </head>
