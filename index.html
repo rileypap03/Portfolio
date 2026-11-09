@@ -8,7 +8,7 @@
 <meta property="og:title" content="Paul Riley · Design leader">
 <meta property="og:description" content="Paul Riley builds design teams and leads products through big change. Case studies from Sky Bet, Betfair and Flutter UKI.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script>(function(){var P=function(v){var m=/^(dark|light)(?:[.|](\d+))?$/.exec(v||"");return m?{t:m[1],ts:+(m[2]||0)}:null},c=[];try{c.push(P(new URLSearchParams(location.search).get("theme")))}catch(e){}try{c.push(P(localStorage.getItem("pr-theme")))}catch(e){}try{c.push(P(sessionStorage.getItem("pr-theme")))}catch(e){}try{var n=/pr-theme=([^;]+)/.exec(window.name||"");c.push(P(n&&n[1]))}catch(e){}c=c.filter(Boolean).sort(function(a,b){return b.ts-a.ts});if(c[0])document.documentElement.dataset.theme=c[0].t})();</script>
+<script>(function(){var P=function(v){var m=/^(dark|light)(?:[.|](\d+))?$/.exec(v||"");return m?{t:m[1],ts:+(m[2]||0)}:null},c=[];try{c.push(P(new URLSearchParams(location.search).get("theme")))}catch(e){}try{c.push(P(localStorage.getItem("pr-theme")))}catch(e){}try{c.push(P(sessionStorage.getItem("pr-theme")))}catch(e){}try{var n=/pr-theme=([^;]+)/.exec(window.name||"");c.push(P(n&&n[1]))}catch(e){}c=c.filter(Boolean).sort(function(a,b){return b.ts-a.ts});document.documentElement.dataset.theme=c[0]?c[0].t:"dark"})();</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Young+Serif&amp;display=swap">
 <style>
@@ -379,6 +379,39 @@ class Component extends DCLogic {
     this.state = { active: 'home', rv: {} };
   }
   componentDidMount() {
+    if (!window.__prPix && typeof IntersectionObserver !== 'undefined' && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { window.__prPix = true;
+      const steps = [48, 24, 12, 6, 3], stepMs = 85;
+      const run = (img) => { if (img.__pix) return; img.__pix = true;
+        const host = img.parentElement; if (!host) return;
+        const r = img.getBoundingClientRect(); const w = Math.max(1, Math.round(r.width)), h = Math.max(1, Math.round(r.height));
+        if (r.height < 40 || r.width < 40) return; const cs = getComputedStyle(img); const nw = img.naturalWidth, nh = img.naturalHeight; let s0x = 0, s0y = 0, s0w = nw, s0h = nh;
+        if (cs.objectFit === 'cover') { const sc = Math.max(w / nw, h / nh); s0w = Math.min(nw, w / sc); s0h = Math.min(nh, h / sc); const pp = (cs.objectPosition || '50% 50%').split(' ');
+          const pc = (v, keyA) => { if (!v) return 0.5; if (v === 'left' || v === 'top') return 0; if (v === 'right' || v === 'bottom') return 1; if (v === 'center') return 0.5; const n = parseFloat(v); return v.indexOf('%') > -1 ? n / 100 : 0; };
+          s0x = (nw - s0w) * pc(pp[0]); s0y = (nh - s0h) * pc(pp[1] || '50%'); }
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const cv = document.createElement('canvas'); cv.className = 'pix-cv'; cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+        if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+        const hr = host.getBoundingClientRect(); const ox = r.left - hr.left - host.clientLeft, oy = r.top - hr.top - host.clientTop;
+        cv.style.cssText = 'position:absolute;left:' + ox + 'px;top:' + oy + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:none;z-index:2;object-fit:cover;border-radius:' + getComputedStyle(img).borderRadius;
+        host.appendChild(cv); const ctx = cv.getContext('2d');
+        const layers = steps.map((st) => { const b = st * dpr; const tw = Math.max(1, Math.ceil(cv.width / b)), th = Math.max(1, Math.ceil(cv.height / b));
+          const sm = document.createElement('canvas'); sm.width = tw; sm.height = th; const sx = sm.getContext('2d'); sx.imageSmoothingEnabled = true;
+          try { sx.drawImage(img, s0x, s0y, s0w, s0h, 0, 0, tw, th); } catch (e) { return null; }
+          const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
+          lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
+        if (layers.some((l) => !l)) { cv.remove(); return; }
+        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1150, band = 0.38, t0 = performance.now();
+        const frame = (now) => { const q = img.getBoundingClientRect(); if (!img.isConnected || Math.abs(q.width - w) > 2 || Math.abs(q.height - h) > 2) { cv.remove(); return; }
+          const p = Math.min(1, (now - t0) / dur) * (1 + band) + 0.001; let done = true; ctx.clearRect(0, 0, cv.width, cv.height);
+          for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const d = (c + r) / Math.max(1, cols + rows - 2); const k = (p - d) / band;
+            if (k >= 1) continue; done = false; const lv = Math.max(0, Math.min(steps.length - 1, Math.floor(k * steps.length)));
+            const x = c * cell, y = r * cell; ctx.drawImage(layers[lv], x, y, cell, cell, x, y, cell, cell); }
+          if (done || now - t0 > dur + 50) cv.remove(); else requestAnimationFrame(frame); };
+        requestAnimationFrame(frame); };
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; const img = e.target; io.unobserve(img);
+        if (img.complete && img.naturalWidth) run(img); else img.addEventListener('load', () => run(img), { once: true }); }), { threshold: 0.3 });
+      const scanPix = () => document.querySelectorAll('.ow-shots img, img[data-pix]').forEach((img) => { if (!img.__pixObs) { img.__pixObs = true; io.observe(img); } });
+      scanPix(); setTimeout(scanPix, 800); setTimeout(scanPix, 2500); window.__prScanPix = scanPix; }
     if (!window.__prScroll) { window.__prScroll = true; const onS = () => { const y = window.pageYOffset || document.documentElement.scrollTop; document.documentElement.classList.toggle('pr-scrolled', y > Math.min(480, window.innerHeight * 0.6)); };
       window.addEventListener('scroll', onS, { passive: true }); onS(); }
     const prParse = (v) => { const m = /^(dark|light)(?:[.|](\d+))?$/.exec(v || ""); return m ? { t: m[1], ts: +(m[2] || 0) } : null; };
@@ -391,7 +424,7 @@ class Component extends DCLogic {
     const prSet = (t, ts) => { ts = ts || Date.now(); window.__prTs = ts; const v = t + "|" + ts;
       try { localStorage.setItem("pr-theme", v); } catch (e) {} try { sessionStorage.setItem("pr-theme", v); } catch (e) {}
       try { window.name = (window.name || "").replace(/pr-theme=[^;]*;?/, "") + "pr-theme=" + v + ";"; } catch (e) {} };
-    const prApply = () => { const g = prGet(); if (g) { document.documentElement.dataset.theme = g.t; prSet(g.t, g.ts); } else { delete document.documentElement.dataset.theme; } };
+    const prApply = () => { const g = prGet(); if (g) { document.documentElement.dataset.theme = g.t; prSet(g.t, g.ts); } else { document.documentElement.dataset.theme = "dark"; } };
     prApply(); requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("pr-ready")));
     try { const u = new URL(location.href); if (u.searchParams.has("theme")) { u.searchParams.delete("theme"); history.replaceState(history.state, "", u.pathname + u.search + u.hash); } } catch (e) {}
     if (!window.__prTheme) { window.__prTheme = true;
