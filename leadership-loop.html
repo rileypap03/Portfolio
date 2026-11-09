@@ -252,6 +252,15 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 .pg a[style*="text-decoration-color: var(--ul)"],.cta-t{color:var(--accent) !important;text-decoration-thickness:2px !important}
 .blk a[style*="text-decoration-color: var(--ul)"],.blk-deep a[style*="text-decoration-color: var(--ul)"]{color:var(--accent) !important}
 .next-cs .arr,.work-row .arr{color:var(--accent)}
+/* tighter rhythm between text and images */
+section.snap.prose{padding-top:40px !important}
+section.snap.prose+section.snap.prose{padding-top:28px !important}
+.her{padding:24px 20px 32px !important;gap:20px !important;margin-top:32px}
+.jm-sec{padding:28px 20px 36px !important;margin-top:24px}
+.pr-media{padding-top:8px !important}
+/* labels share the reading column */
+.her>:first-child,.ut>p:first-child,.jm-intro{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+.ut>p:first-child{padding-left:0 !important;padding-right:0 !important}
 </style>
 
 </head>
@@ -292,19 +301,29 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <h2 id="ch-h" class="pr-h">The challenge</h2>
 <p class="pr-lead">1:1s are where most management happens, and they’re surprisingly fragile.</p><p>What someone raised three weeks ago rarely makes it into today’s conversation. Managers lose track of their own promises, and when one slips, trust erodes quietly. Praise sits in Slack, goals in a document and progress in people’s heads.</p><p>Most tools focus on agendas or reviews. I wanted to explore memory and accountability in service of the conversation.</p>
 </section>
+
 <section class="snap prose" aria-labelledby="role-h">
 <h2 id="role-h" class="pr-h">My role</h2>
 <p class="pr-meta">Product and design lead, building with AI · Built with Claude Code, Next.js and Mobbin · Working prototype on fictional data</p><p>A solo project. I framed the problem, set the principles and wrote the requirements, including the rules for evidence, approval and wellbeing. I directed Claude to build it phase by phase, challenged every output, and turned gaps found in testing into rule changes. The AI wrote the code and first drafts; the direction and the decisions were mine.</p>
 </section>
 
-<section class="snap prose" aria-labelledby="pr-h">
-<h2 id="pr-h" class="pr-h">Principles I designed to</h2>
-<ul class="pr-list"><li><strong>Employee-led.</strong> The 1:1 belongs to the person; the tool is a memory aid, never an agenda.</li><li><strong>Coaching, not evaluating.</strong> No ratings, rankings or promotion calls.</li><li><strong>Trust through accuracy.</strong> Every point links to what was said.</li><li><strong>Accountability both ways.</strong> The manager’s promises are tracked too, and shown first.</li><li><strong>Recognition as celebration,</strong> never as a score.</li><li><strong>Care with personal information.</strong> Only work points people choose to share, in their own words.</li></ul>
-</section>
-
 <section class="snap prose" aria-labelledby="hw-h">
 <h2 id="hw-h" class="pr-h">How it works</h2>
 <p>A coaching workflow in Claude Code and a dashboard for the manager. Nothing changes anyone’s record without the manager’s approval.</p><ol class="pr-steps"><li><h3>Prepare</h3><p>A short briefing, built only from what was already on record.</p></li><li><h3>Reconcile</h3><p>Compares the new transcript with the record.</p></li><li><h3>Propose</h3><p>Shows each change with the quote behind it.</p></li><li><h3>Apply</h3><p>Saves only the changes the manager approves.</p></li></ol>
+</section>
+
+<section class="snap" aria-labelledby="wk-h" style="border-top: 1px solid var(--line)">
+<h2 id="wk-h" style="margin: 0; padding: 32px 20px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">The working prototype</h2>
+<div class="cols cols-3" style="background: var(--line); border-top: 1px solid var(--line)">
+<figure class="fig"><img class="shot" src="/assets/f4343d8e802b3fe3f79bd3ece07ec4d5.jpg" alt="Prepare screen for a 1:1 with Alex: follow-ups, things to celebrate and folded extras" width="1600" height="1111" loading="lazy"><figcaption><strong>Prepare 1:1.</strong> One screen. Alex leads; this is a memory aid.</figcaption></figure>
+<figure class="fig"><img class="shot" src="/assets/1da7a549f10c7cc34a8e0eb61bcbda05.jpg" alt="Review updates, step one: what changed since the last approved record" width="1600" height="1111" loading="lazy"><figcaption><strong>Review updates.</strong> Five short steps. Nothing changes the record until you approve.</figcaption></figure>
+<figure class="fig"><img class="shot" src="/assets/7db93dc4f4c05aa38416ce79c9cecf8a.jpg" alt="My Commitments: what the manager promised each person, grouped by due soon and did this happen" width="1600" height="1111" loading="lazy"><figcaption><strong>My Commitments.</strong> What you promised, with fair wording like “Past due. Did it happen?”</figcaption></figure>
+</div>
+</section>
+
+<section class="snap prose" aria-labelledby="pr-h">
+<h2 id="pr-h" class="pr-h">Principles I designed to</h2>
+<ul class="pr-list"><li><strong>Employee-led.</strong> The 1:1 belongs to the person; the tool is a memory aid, never an agenda.</li><li><strong>Coaching, not evaluating.</strong> No ratings, rankings or promotion calls.</li><li><strong>Trust through accuracy.</strong> Every point links to what was said.</li><li><strong>Accountability both ways.</strong> The manager’s promises are tracked too, and shown first.</li><li><strong>Recognition as celebration,</strong> never as a score.</li><li><strong>Care with personal information.</strong> Only work points people choose to share, in their own words.</li></ul>
 </section>
 
 <section class="snap prose" aria-labelledby="ap-h">
@@ -318,15 +337,6 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <div class="cols cols-2" style="background: var(--line); border-top: 1px solid var(--line)">
 <figure class="fig"><img class="shot" src="/assets/01bd3082e81bac4c28fe4aaae74d1e13.jpg" alt="Earlier Home screen: warm cream background, indigo buttons and a card around every section" width="1440" height="1000" loading="lazy"><figcaption><strong>Before.</strong> Cream background, indigo buttons, and the same card around everything.</figcaption></figure>
 <figure class="fig"><img class="shot" src="/assets/b8b4e09d579f8e5d5f445a2d4091e978.jpg" alt="Redesigned Home screen: white page, grey sidebar and sections as panels with icon headers" width="1600" height="1111" loading="lazy"><figcaption><strong>After.</strong> A white page, a quiet sidebar, and each section as a panel with its own icon and count.</figcaption></figure>
-</div>
-</section>
-
-<section class="snap" aria-labelledby="wk-h" style="border-top: 1px solid var(--line)">
-<h2 id="wk-h" style="margin: 0; padding: 32px 20px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">The working prototype</h2>
-<div class="cols cols-3" style="background: var(--line); border-top: 1px solid var(--line)">
-<figure class="fig"><img class="shot" src="/assets/f4343d8e802b3fe3f79bd3ece07ec4d5.jpg" alt="Prepare screen for a 1:1 with Alex: follow-ups, things to celebrate and folded extras" width="1600" height="1111" loading="lazy"><figcaption><strong>Prepare 1:1.</strong> One screen. Alex leads; this is a memory aid.</figcaption></figure>
-<figure class="fig"><img class="shot" src="/assets/1da7a549f10c7cc34a8e0eb61bcbda05.jpg" alt="Review updates, step one: what changed since the last approved record" width="1600" height="1111" loading="lazy"><figcaption><strong>Review updates.</strong> Five short steps. Nothing changes the record until you approve.</figcaption></figure>
-<figure class="fig"><img class="shot" src="/assets/7db93dc4f4c05aa38416ce79c9cecf8a.jpg" alt="My Commitments: what the manager promised each person, grouped by due soon and did this happen" width="1600" height="1111" loading="lazy"><figcaption><strong>My Commitments.</strong> What you promised, with fair wording like “Past due. Did it happen?”</figcaption></figure>
 </div>
 </section>
 
@@ -425,7 +435,7 @@ class Component extends DCLogic {
           const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
           lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
         if (layers.some((l) => !l)) { cv.remove(); return; }
-        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1700, band = 0.38, t0 = performance.now();
+        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1150, band = 0.38, t0 = performance.now();
         const frame = (now) => { const q = img.getBoundingClientRect(); if (!img.isConnected || Math.abs(q.width - w) > 2 || Math.abs(q.height - h) > 2) { cv.remove(); return; }
           const p = Math.min(1, (now - t0) / dur) * (1 + band) + 0.001; let done = true; ctx.clearRect(0, 0, cv.width, cv.height);
           for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const d = (c + r) / Math.max(1, cols + rows - 2); const k = (p - d) / band;

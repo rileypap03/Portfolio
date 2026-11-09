@@ -317,6 +317,15 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 .pg a[style*="text-decoration-color: var(--ul)"],.cta-t{color:var(--accent) !important;text-decoration-thickness:2px !important}
 .blk a[style*="text-decoration-color: var(--ul)"],.blk-deep a[style*="text-decoration-color: var(--ul)"]{color:var(--accent) !important}
 .next-cs .arr,.work-row .arr{color:var(--accent)}
+/* tighter rhythm between text and images */
+section.snap.prose{padding-top:40px !important}
+section.snap.prose+section.snap.prose{padding-top:28px !important}
+.her{padding:24px 20px 32px !important;gap:20px !important;margin-top:32px}
+.jm-sec{padding:28px 20px 36px !important;margin-top:24px}
+.pr-media{padding-top:8px !important}
+/* labels share the reading column */
+.her>:first-child,.ut>p:first-child,.jm-intro{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+.ut>p:first-child{padding-left:0 !important;padding-right:0 !important}
 </style>
 
 </head>
@@ -351,15 +360,12 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <h2 id="ch-h" class="pr-h">The challenge</h2>
 <p>Sky Bet, the group’s largest brand, had 18 months to move onto the platform first built for Betfair. Half the design team I took on came from Sky Bet and worked very differently. “This is not how we do it at Sky Bet” was a fair reaction, and some stakeholders were harder to bring along than the designers.</p>
 </section>
+
 <section class="snap prose" aria-labelledby="role-h">
 <h2 id="role-h" class="pr-h">My role</h2>
 <p class="pr-meta">Sports Product Design Manager</p><p>I was hired to lead design through the migration, drawing on the Betfair rebuild. I spent my first two months aligning how product, design and engineering worked, then led the sports design team and owned the UX/UI and prioritisation workstreams.</p>
 </section>
 
-<section class="snap her" aria-labelledby="ba-h">
-<p id="ba-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Before and after · Sky Bet, 2023 to 2025</p>
-<ul class="her-row her-4"><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/105740f47b016acc6e619202dea29d38.jpg" alt="The old Sky Bet app home in 2023: sport shortcuts, an extra places promotion, quick-link pills and featured bets" width="647" height="1400" loading="lazy"></div></div><figcaption>Old Sky Bet home, 2023</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/f4af3928adc42b3935f638af2ee4ac26.jpg" alt="Sky Bet home on the shared platform: sport tiles, a price boost card and quick links" width="375" height="812" loading="lazy"></div></div><figcaption>Home on the shared platform</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/9c74a7da0871a48b69ed65acda9c6f93.jpg" alt="Sky Bet horse racing Next Races page on the shared platform" width="375" height="812" loading="lazy"></div></div><figcaption>Horse racing</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/80fc76a40b426efd8aa4a939ad78e39e.jpg" alt="Sky Bet My Bets on the shared platform, with a toggle for bets placed before the move" width="375" height="812" loading="lazy"></div></div><figcaption>My Bets, with older bets one tap away</figcaption></figure></li></ul>
-</section>
 <section class="snap prose" aria-labelledby="ap-h">
 <h2 id="ap-h" class="pr-h">The approach</h2>
 <ol class="pr-steps"><li><h3>Set the operating model</h3><p>Templated user stories didn’t land, so every ticket became a hub linking to the Confluence pages product and engineering already used.</p></li><li><h3>Make progress visible</h3><p>Workstream sessions and fortnightly sports-wide reviews kept decisions on track. People were won over by seeing the benefits, not by being told.</p></li><li><h3>Build one team</h3><p>Stand-ups, peer reviews, retros and weekly health checks, with one-to-ones and engagement surveys telling us when to change how we worked.</p></li><li><h3>Release in stages</h3><p>Releasing to small groups of customers first meant feedback arrived while there was still time to act on it.</p></li></ol>
@@ -375,6 +381,10 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <p class="pr-lead">Ship Betfair in blue, then bring Sky Bet back.</p><p>Leadership chose a quick reskin so we could test the product with customers early. I backed it, as the old app was still live during beta. Feedback was clear: it felt like Betfair in blue.</p><p>So design and product audited the old app to pin down what made it feel like Sky Bet. That set the brief for a second phase: blue mastheads, the promotions carousel and the Sky Bet font first, then the content hierarchy, the bet slip and My Bets.</p>
 </section>
 
+<section class="snap her" aria-labelledby="ba-h">
+<p id="ba-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Before and after · Sky Bet, 2023 to 2025</p>
+<ul class="her-row her-4"><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/105740f47b016acc6e619202dea29d38.jpg" alt="The old Sky Bet app home in 2023: sport shortcuts, an extra places promotion, quick-link pills and featured bets" width="647" height="1400" loading="lazy"></div></div><figcaption>Old Sky Bet home, 2023</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/f4af3928adc42b3935f638af2ee4ac26.jpg" alt="Sky Bet home on the shared platform: sport tiles, a price boost card and quick links" width="375" height="812" loading="lazy"></div></div><figcaption>Home on the shared platform</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/9c74a7da0871a48b69ed65acda9c6f93.jpg" alt="Sky Bet horse racing Next Races page on the shared platform" width="375" height="812" loading="lazy"></div></div><figcaption>Horse racing</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/80fc76a40b426efd8aa4a939ad78e39e.jpg" alt="Sky Bet My Bets on the shared platform, with a toggle for bets placed before the move" width="375" height="812" loading="lazy"></div></div><figcaption>My Bets, with older bets one tap away</figcaption></figure></li></ul>
+</section>
 
 <section class="snap prose" aria-labelledby="lt-h">
 <h2 id="lt-h" class="pr-h">Leading the team</h2>
@@ -480,7 +490,7 @@ class Component extends DCLogic {
           const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
           lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
         if (layers.some((l) => !l)) { cv.remove(); return; }
-        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1700, band = 0.38, t0 = performance.now();
+        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1150, band = 0.38, t0 = performance.now();
         const frame = (now) => { const q = img.getBoundingClientRect(); if (!img.isConnected || Math.abs(q.width - w) > 2 || Math.abs(q.height - h) > 2) { cv.remove(); return; }
           const p = Math.min(1, (now - t0) / dur) * (1 + band) + 0.001; let done = true; ctx.clearRect(0, 0, cv.width, cv.height);
           for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const d = (c + r) / Math.max(1, cols + rows - 2); const k = (p - d) / band;

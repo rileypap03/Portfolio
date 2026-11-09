@@ -355,6 +355,15 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 .pg a[style*="text-decoration-color: var(--ul)"],.cta-t{color:var(--accent) !important;text-decoration-thickness:2px !important}
 .blk a[style*="text-decoration-color: var(--ul)"],.blk-deep a[style*="text-decoration-color: var(--ul)"]{color:var(--accent) !important}
 .next-cs .arr,.work-row .arr{color:var(--accent)}
+/* tighter rhythm between text and images */
+section.snap.prose{padding-top:40px !important}
+section.snap.prose+section.snap.prose{padding-top:28px !important}
+.her{padding:24px 20px 32px !important;gap:20px !important;margin-top:32px}
+.jm-sec{padding:28px 20px 36px !important;margin-top:24px}
+.pr-media{padding-top:8px !important}
+/* labels share the reading column */
+.her>:first-child,.ut>p:first-child,.jm-intro{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+.ut>p:first-child{padding-left:0 !important;padding-right:0 !important}
 </style>
 
 </head>
@@ -389,6 +398,7 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <h2 id="ch-h" class="pr-h">The challenge</h2>
 <p>Betfair’s platform could no longer take new features, so a rebuild was a technical necessity. The business saw a bigger opportunity: to make Betfair a home for sports fans, not just a place to bet, and earn some of the time customers spent in score, stats and club apps.</p>
 </section>
+
 <section class="snap prose" aria-labelledby="role-h">
 <h2 id="role-h" class="pr-h">My role</h2>
 <p class="pr-meta">Sports Product Design Manager</p><p>I led the sports design team, growing it from 6 to 18, and owned design direction for the programme. I presented progress weekly to the Managing Director of Product and monthly to the UK and Ireland CEO.</p>
@@ -403,6 +413,7 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <h2 id="ap-h" class="pr-h">The approach</h2>
 <ol class="pr-steps"><li><h3>Make the case</h3><p>Our CEO brought back a model from Meta: people use products leaning forward, leaning back or on the go. I used app data to map when customers were in each mode, and led three pitch films that won backing from shareholders and the executive team. At the town hall, the response was “why aren’t we doing this now?”</p></li><li><h3>Design end to end</h3><p>Workshops with Gaming and Customer teams, and patterns from banking and fintech apps for a clean, trustworthy feel.</p></li><li><h3>Test with real customers</h3><p>We tested with Betfair customers almost every week from 2018, on a working app on their own phones, then released to groups of customers, pausing whenever results surprised us.</p></li><li><h3>Adapt the strategy</h3><p>Partway through, new leadership reset the direction: a product closer to the one customers knew, with a refreshed UX and UI and a stable base to build on.</p></li></ol>
 </section>
+
 <section class="snap pr-media" aria-label="Pitch films and customer testing">
 <div style="padding: 20px; display: flex; justify-content: center">
 <div class="pv" data-pv role="region" aria-roledescription="carousel" aria-label="Pitch films, 2017" style="flex: 0 1 640px; min-height: 280px">
@@ -429,14 +440,14 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 <p class="pr-lead">Letting go of the destination idea.</p><p>Testing showed customers already had trusted homes for scores and stats, like the Premier League’s own apps. So we dropped videos, ambassador content, feeds and player pages, and kept what worked: the refreshed layouts, with the Betfair yellow used as a deliberate accent.</p><p>The brand team pushed back. I ran regular sessions with them and let the test results guide the decision.</p>
 </section>
 
-<section class="snap prose" aria-labelledby="lt-h">
-<h2 id="lt-h" class="pr-h">Leading the team</h2>
-<p class="pr-lead">Two first-job designers grew to senior and principal. One person left in five years.</p><p>I grew the sports design team from 6 to 18, including contractors, with roles from interns to leads. Designers owned key initiatives with my support, and grew through them.</p>
-</section>
-
 <section class="snap her" aria-labelledby="land-h">
 <p id="land-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Where we landed · The rebuilt Betfair app, 2023</p>
 <ul class="her-row"><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/23dd02657fad85c4266d3932719238ec.jpg" alt="Rebuilt Betfair app home: sport shortcuts, an odds boost banner, featured events and popular bet builders" width="647" height="1400" loading="lazy"></div></div><figcaption>Home</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/62c583a4fbf0f5f5270c087142cf04e4.jpg" alt="Rebuilt Betfair app: Today's Football list with match result prices" width="647" height="1400" loading="lazy"></div></div><figcaption>Today’s Football</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/56dfc8465fb4f2f21ab5e3247bd9d134.jpg" alt="Rebuilt Betfair app betslip showing a bet builder and singles" width="647" height="1400" loading="lazy"></div></div><figcaption>Betslip</figcaption></figure></li></ul>
+</section>
+
+<section class="snap prose" aria-labelledby="lt-h">
+<h2 id="lt-h" class="pr-h">Leading the team</h2>
+<p class="pr-lead">Two first-job designers grew to senior and principal. One person left in five years.</p><p>I grew the sports design team from 6 to 18, including contractors, with roles from interns to leads. Designers owned key initiatives with my support, and grew through them.</p>
 </section>
 
 <section class="snap jm-sec" aria-labelledby="jm-h">
@@ -543,7 +554,7 @@ class Component extends DCLogic {
           const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
           lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
         if (layers.some((l) => !l)) { cv.remove(); return; }
-        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1700, band = 0.38, t0 = performance.now();
+        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1150, band = 0.38, t0 = performance.now();
         const frame = (now) => { const q = img.getBoundingClientRect(); if (!img.isConnected || Math.abs(q.width - w) > 2 || Math.abs(q.height - h) > 2) { cv.remove(); return; }
           const p = Math.min(1, (now - t0) / dur) * (1 + band) + 0.001; let done = true; ctx.clearRect(0, 0, cv.width, cv.height);
           for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const d = (c + r) / Math.max(1, cols + rows - 2); const k = (p - d) / band;

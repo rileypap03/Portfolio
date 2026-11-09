@@ -178,6 +178,15 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 .tst-n{color:var(--ink);font-weight:600}.tst-r{color:var(--muted2)}
 #testimonials>div:first-child{max-width:760px;margin-left:auto;margin-right:auto;width:100%;box-sizing:border-box}
 .work-row span[style*="max-width: 380px"]{max-width:68ch !important}
+/* home shares the same centred reading column */
+#top>*,#work>*,#about>*,#clients>*,#contact>*{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+#top h1{font-size:clamp(40px,5vw,64px) !important;line-height:1.05 !important}
+#about .cols-4{grid-template-columns:minmax(0,1fr) !important;background:transparent !important;border-top:0 !important;gap:0 !important}
+#about .cols-4>*{padding:18px 20px !important;background:transparent !important;border-top:1px solid var(--line)}
+#clients .cols-4{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
+@media (max-width: 640px){#clients .cols-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+.work-row>span:first-child{font-size:clamp(28px,3.2vw,40px) !important}
+#about .cols-4 p,#about .cols-4 span{max-width:none !important}
 </style>
 
 </head>

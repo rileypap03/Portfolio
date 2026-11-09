@@ -248,6 +248,15 @@ article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
 .pg a[style*="text-decoration-color: var(--ul)"],.cta-t{color:var(--accent) !important;text-decoration-thickness:2px !important}
 .blk a[style*="text-decoration-color: var(--ul)"],.blk-deep a[style*="text-decoration-color: var(--ul)"]{color:var(--accent) !important}
 .next-cs .arr,.work-row .arr{color:var(--accent)}
+/* tighter rhythm between text and images */
+section.snap.prose{padding-top:40px !important}
+section.snap.prose+section.snap.prose{padding-top:28px !important}
+.her{padding:24px 20px 32px !important;gap:20px !important;margin-top:32px}
+.jm-sec{padding:28px 20px 36px !important;margin-top:24px}
+.pr-media{padding-top:8px !important}
+/* labels share the reading column */
+.her>:first-child,.ut>p:first-child,.jm-intro{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+.ut>p:first-child{padding-left:0 !important;padding-right:0 !important}
 </style>
 
 </head>
@@ -387,7 +396,7 @@ class Component extends DCLogic {
           const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
           lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
         if (layers.some((l) => !l)) { cv.remove(); return; }
-        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1700, band = 0.38, t0 = performance.now();
+        const cell = steps[0] * dpr, cols = Math.ceil(cv.width / cell), rows = Math.ceil(cv.height / cell), dur = 1150, band = 0.38, t0 = performance.now();
         const frame = (now) => { const q = img.getBoundingClientRect(); if (!img.isConnected || Math.abs(q.width - w) > 2 || Math.abs(q.height - h) > 2) { cv.remove(); return; }
           const p = Math.min(1, (now - t0) / dur) * (1 + band) + 0.001; let done = true; ctx.clearRect(0, 0, cv.width, cv.height);
           for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const d = (c + r) / Math.max(1, cols + rows - 2); const k = (p - d) / band;
