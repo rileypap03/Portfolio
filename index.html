@@ -137,6 +137,11 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 .kr-l,.sum span{font-size: var(--fs-b)}
 .work-row>span:last-child>span:nth-child(n+2){font-size:var(--fs-b)}
 .blk,.blk-deep{--dot:#66779B}
+.work-row{grid-template-columns:minmax(0,1fr) !important}
+.work-row>span:first-child{padding-bottom:0 !important}
+.work-row>span:last-child{padding-top:16px !important;max-width:760px}
+.lrn{grid-template-columns:minmax(0,1fr) !important;row-gap:12px !important}
+.lrn>h2+p{grid-column:1 !important;grid-row:auto !important}
 </style>
 
 </head>

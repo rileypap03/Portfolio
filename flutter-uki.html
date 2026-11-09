@@ -181,6 +181,46 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 .sum[aria-label="Summary"]::before{display:none !important;content:none !important}
 .units i.ld,.org-key i.ld{outline:2px solid var(--ink);outline-offset:2px;margin:0 3px}
 @media (min-width: 641px){.sum[aria-label="Summary"]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}}
+/* linear reading layout */
+section.snap.prose{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;padding:56px 20px 8px;box-sizing:border-box;border:0 !important;display:block}
+section.snap.prose.pr-end{padding-bottom:88px}
+.pr-h{margin:0 0 18px;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:var(--fs-2);line-height:1.2;letter-spacing:0;text-transform:none;color:var(--ink)}
+.prose p{margin:0 0 16px;font-size:var(--fs-b);line-height:1.65;color:var(--muted)}
+.prose p.pr-lead{font-family:Geist,sans-serif;font-size:var(--fs-2);line-height:1.3;letter-spacing:-0.015em;color:var(--ink);margin-bottom:18px}
+.prose p.pr-meta{font-size:13px;line-height:1.5;color:var(--muted2);margin:-8px 0 12px}
+.pr-steps{list-style:none;margin:4px 0 0;padding:0;counter-reset:st;display:flex;flex-direction:column;gap:22px}
+.pr-steps li{counter-increment:st;display:grid;grid-template-columns:36px minmax(0,1fr)}
+.pr-steps li::before{content:counter(st,decimal-leading-zero);grid-row:1 / span 2;font-size:13px;line-height:1.9;color:var(--accent);font-weight:700}
+.pr-steps h3{margin:0 0 4px;font-family:Geist,sans-serif;font-weight:600;font-size:var(--fs-b);line-height:1.45;color:var(--ink)}
+.pr-steps li p{margin:0}
+.pr-res{margin:6px 0 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 40px}
+.pr-res div{min-width:0}
+.pr-res dt{font-family:Geist,sans-serif;font-weight:500;font-size:var(--fs-1);line-height:1;letter-spacing:-0.03em;color:var(--ink);margin:0 0 10px}
+.pr-res dd{margin:0;font-size:var(--fs-b);line-height:1.5;color:var(--muted)}
+.prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.pr-list{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:10px;font-size:var(--fs-b);line-height:1.6;color:var(--muted)}
+.pr-list strong{color:var(--ink);font-weight:600}
+@media (max-width: 640px){.pr-res{grid-template-columns:minmax(0,1fr);gap:24px}section.snap.prose{padding-top:44px}}
+.pr-media{padding-top:24px}
+/* stack the remaining two-column sections */
+.lrn{grid-template-columns:minmax(0,1fr) !important;row-gap:12px !important}
+.lrn>h2+p{grid-column:1 !important;grid-row:auto !important}
+.lrn>h2,.lrn>h2+p{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+.jm-intro{grid-template-columns:minmax(0,1fr) !important;max-width:760px;margin:0 auto;width:100%;gap:12px !important}
+/* fewer boxes */
+.sum{background:transparent !important;border-top:0 !important}
+.sum>div{background:transparent !important}
+.pg [style*="background: var(--line)"]{background:transparent !important}
+.pg>section[style*="border-top: 1px solid var(--line)"]{border-top:0 !important}
+.jm-tag,.jm-line .jm-tag,.jm-notes .jm-tag{border:0 !important;padding:0 !important;background:none !important;box-shadow:none !important;margin:0 0 2px !important;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.jm-td{color:var(--accent) !important}
+.jm-legend{display:none !important}
+/* header shares the reading column */
+article>section.snap:first-of-type>div:first-child,article>section.snap:first-of-type>.sum{max-width:760px !important;margin-left:auto !important;margin-right:auto !important;width:100%;box-sizing:border-box}
+article>section.snap:first-of-type h1{font-size:clamp(40px,4.6vw,64px) !important;line-height:1.05 !important}
+article>section.snap:first-of-type>div:first-child>p{max-width:none !important}
+.sum>div{padding-left:20px !important;padding-right:20px !important}
+.sum>div::after{left:20px}
 </style>
 
 </head>
@@ -204,76 +244,56 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 
 <section class="snap" style="display: flex; flex-direction: column; min-height: 0">
 <div style="display: flex; flex-direction: column; gap: 24px; padding: clamp(48px, 6vw, 96px) 20px 56px">
-<p style="margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Case study · Flutter UKI Customer</p>
+<p style="margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Case study · Flutter UKI Customer · 2025–present</p>
 <h1 data-reveal="r1" data-in="{{rv.r1}}" style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-d); line-height: 1.0; letter-spacing: -0.02em; max-width: 1280px"><span class="w" style="--i:0">Growing</span> <span class="w" style="--i:1">a</span> <span class="w" style="--i:2">design</span> <span class="w" style="--i:3">team</span> <span class="w" style="--i:4">from</span> <span class="w" style="--i:5">4</span> <span class="w" style="--i:6">to</span> <span class="w" style="--i:7">9</span> <span class="w" style="--i:8">to</span> <span class="w" style="--i:9">support</span> <span class="w" style="--i:10">28</span> <span class="w" style="--i:11">squads</span></h1>
 <p style="margin: 0; max-width: 900px; font-family: 'Geist', sans-serif; font-size: var(--fs-2); line-height: 1.25; letter-spacing: -0.02em">How I used AI to cut through complexity, and brought structure, visibility and a leadership layer to a small design team serving four product tribes.</p>
 </div>
-<div class="sum" role="list" aria-label="Summary"><div role="listitem"><b>9</b><span class="units" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="un"></i><i class="un"></i><i class="un"></i><i class="un"></i><i class="un"></i></span><span>designers, up from 4, with two lead-level managers</span></div><div role="listitem"><b>28</b><span>squads across four tribes</span></div><div role="listitem"><b>4</b><span>tribes, each with its own front door</span></div></div>
-<dl class="cols cols-4" style="margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--line)">
-<div style="min-width: 0; padding: 32px 20px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px"><dt style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">My role</dt><dd style="margin: 0; font-size: var(--fs-b); line-height: 1.4">Senior Design Manager, UKI Customer</dd></div>
-<div style="min-width: 0; padding: 32px 20px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px"><dt style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">Team</dt><dd style="margin: 0; font-size: var(--fs-b); line-height: 1.4">9 product and content designers, including 2 leads</dd></div>
-<div style="min-width: 0; padding: 32px 20px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px"><dt style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">Timeline</dt><dd style="margin: 0; font-size: var(--fs-b); line-height: 1.4">2025–present</dd></div>
-<div style="min-width: 0; padding: 32px 20px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px"><dt style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">Partners</dt><dd style="margin: 0; font-size: var(--fs-b); line-height: 1.4">Product, Engineering, Design Systems, UX Research</dd></div>
-</dl>
+<div class="sum" role="list" aria-label="Summary"><div role="listitem"><b>9</b><span>designers, up from 4, with two lead-level managers</span></div><div role="listitem"><b>28</b><span>squads across four tribes</span></div><div role="listitem"><b>4</b><span>tribes, each with its own front door</span></div></div>
 </section>
 
-<section class="snap" style="border-top: 1px solid var(--line); display: flex; flex-direction: column">
-<div class="cols cols-2" style="background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">The challenge</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0">After 11 years in Sport, I moved into Customer. During the Sky Bet migration, Customer had no development teams making changes. Afterwards, each of its four tribes had seven squads ready to go, and there were four designers.</p><p style="margin: 0">Requests went straight to designers, and with no hierarchy I had to be hands-on across all four tribes. That built context quickly, but it wasn’t sustainable.</p></div>
-</div>
-<div class="cols cols-2" style="border-top: 1px solid var(--line); background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">My role</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0">I lead product and content design for Customer, line-manage two leads, and agree priorities with the directors and heads of each tribe.</p><p style="margin: 0">The team sits within a UKI design organisation of nearly 70.</p></div>
-</div>
+<section class="snap prose" aria-labelledby="ch-h">
+<h2 id="ch-h" class="pr-h">The challenge</h2>
+<p>After 11 years in Sport, I moved into Customer. Once the Sky Bet migration finished, each of Customer’s four tribes had seven squads ready to go, and there were four designers. Requests went straight to designers, and with no structure I had to be hands-on everywhere. That built context fast, but it wasn’t sustainable.</p>
+</section>
+<section class="snap prose" aria-labelledby="role-h">
+<h2 id="role-h" class="pr-h">My role</h2>
+<p class="pr-meta">Senior Design Manager, UKI Customer</p><p>I lead product and content design for Customer, line-manage two leads, and agree priorities with the leadership of each tribe, within a UK and Ireland design organisation of nearly 70.</p>
 </section>
 
-<section class="snap" style="border-top: 1px solid var(--line); display: flex; flex-direction: column">
-<h2 style="margin: 0; padding: 32px 20px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">The approach</h2>
-<ol class="cols cols-4" style="margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--line)">
-<li style="min-width: 0; padding: 32px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">01</span><h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-2); line-height: 1.1; letter-spacing: -0.02em">A front door for every tribe</h3><p style="margin: 0; font-size: var(--fs-b); line-height: 1.5; color: var(--muted)">One of the first things I put in place. Every request comes through the tribe’s front door, followed by a quick call with the designer and product manager, a ticket on the roadmap, then a kick-off.</p></li>
-<li style="min-width: 0; padding: 32px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">02</span><h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-2); line-height: 1.1; letter-spacing: -0.02em">Make capacity visible</h3><p style="margin: 0; font-size: var(--fs-b); line-height: 1.5; color: var(--muted)">Each roadmap is open to everyone in the tribe’s front-door channel, so product can see what else is planned and where new work will realistically land. Prioritisation moved into product sessions, with the constraints in plain sight.</p></li>
-<li style="min-width: 0; padding: 32px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">03</span><h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-2); line-height: 1.1; letter-spacing: -0.02em">Build a leadership layer</h3><p style="margin: 0; font-size: var(--fs-b); line-height: 1.5; color: var(--muted)">I told my Head of Design and MD the team was too thin to be sustainable. We grew to nine through external hires and internal promotion: a mid-level designer became senior, and a senior became a lead.</p></li>
-<li style="min-width: 0; padding: 32px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted2)">04</span><h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-2); line-height: 1.1; letter-spacing: -0.02em">Bring in service design</h3><p style="margin: 0; font-size: var(--fs-b); line-height: 1.5; color: var(--muted)">I’ve pushed the team to lead on service design methods across design. A Point of Departure workshop I ran realigned senior stakeholders on a large initiative, and I followed up the next week to make sure actions were owned.</p></li>
-</ol>
-<p class="flow-h"><span aria-hidden="true" style="display: inline-block; flex: none; width: 8px; height: 8px; background: var(--accent)"></span>How work comes in through the front door</p><ol class="flow"><li><small>01</small><b>Front door</b><span>Every request comes in through the tribe’s front door channel.</span></li><li><small>02</small><b>Quick call</b><span>The designer and product manager talk it through.</span></li><li><small>03</small><b>On the roadmap</b><span>A ticket goes on a roadmap the whole tribe can see.</span></li><li><small>04</small><b>Kick-off</b><span>The work starts with a kick-off.</span></li></ol>
+<section class="snap prose" aria-labelledby="ap-h">
+<h2 id="ap-h" class="pr-h">The approach</h2>
+<ol class="pr-steps"><li><h3>A front door for every tribe</h3><p>Requests come through one channel, then a quick call with the designer and product manager, a ticket on the roadmap and a kick-off.</p></li><li><h3>Make capacity visible</h3><p>Roadmaps are open to the whole tribe, so product can see where new work will realistically land. Prioritisation moved into product sessions.</p></li><li><h3>Build a leadership layer</h3><p>I told my Head of Design and MD the team was too thin. We grew to nine through hiring and promotion: a mid-level designer became senior, and a senior became a lead.</p></li><li><h3>Bring in service design</h3><p>I’ve pushed the team to lead on service design methods. An alignment workshop I ran brought senior stakeholders together on a large initiative.</p></li></ol>
 </section>
 
-<section class="snap cols cols-2" style="border-top: 1px solid var(--line); background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">AI in practice</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0; font-family: 'Geist', sans-serif; font-size: var(--fs-2); line-height: 1.15; letter-spacing: -0.02em">A single source of truth, built with AI.</p><p style="margin: 0">Our documentation was scattered with no single source of truth, and much of the work involves an internal tool with real technical complexity. I built a skill in an internal Claude-powered tool, loaded it with everything we had, kept it up to date, and set clear instructions for how it should behave.</p><p style="margin: 0">Three designers use it regularly alongside me: a lead and two mid-level designers. It helps us cut through the noise to understand problems, and it helped me plan and run the Point of Departure workshop.</p><p style="margin: 0">I’ve also connected our three Jira tools with AI, so work flows from product discovery through delivery to services. Across UKI, a monthly AI guild shares what people are learning.</p></div>
+<section class="snap prose" aria-labelledby="ai-h">
+<h2 id="ai-h" class="pr-h">AI in practice</h2>
+<p class="pr-lead">A single source of truth, built with AI.</p><p>Our documentation was scattered, and much of the work involves a complex internal tool. I built a skill in an internal Claude-powered tool, loaded it with everything we had and set clear rules for how it behaves. A lead and two designers use it regularly to get to the heart of problems, and it helped me plan that workshop.</p><p>I’ve also connected our three Jira tools with AI, so work flows from discovery through to delivery.</p>
 </section>
 
-<section class="snap cols cols-2" style="border-top: 1px solid var(--line); background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">Key decision</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0; font-family: 'Geist', sans-serif; font-size: var(--fs-2); line-height: 1.15; letter-spacing: -0.02em">Spend my time where the team was least experienced.</p><p style="margin: 0">With 28 squads and a handful of designers, I couldn’t be everywhere. One tribe had a strong, experienced pair and another had a senior designer, so I focused my hands-on support where designers were less experienced.</p><p style="margin: 0">At the same time, I used the visibility from the roadmaps to make the case for growing the team as quickly as possible to support the business roadmaps.</p></div>
+<section class="snap prose" aria-labelledby="kd-h">
+<h2 id="kd-h" class="pr-h">Key decision</h2>
+<p class="pr-lead">Spend my time where the team was least experienced.</p><p>With 28 squads and a handful of designers, I couldn’t be everywhere. Two tribes had experienced designers, so I focused hands-on support where people were newer, and used the roadmaps to make the case for growing the team quickly.</p>
 </section>
 
 
-<section class="snap cols cols-2" style="border-top: 1px solid var(--line); background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">Leading the team</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0; font-family: 'Geist', sans-serif; font-size: var(--fs-2); line-height: 1.15; letter-spacing: -0.02em">A leadership layer, and a weekly pulse on how people are doing.</p><p style="margin: 0">I line-manage the two leads, and they manage their own teams. That freed me to work on priorities with tribe leadership while keeping close to the work.</p><div class="org" role="group" aria-label="How the team was structured"><div><p class="org-h">When I joined</p><div class="org-tier"><span class="org-box me">Me</span></div><span class="org-stem" aria-hidden="true"></span><span class="units" aria-hidden="true"><i></i><i></i><i></i><i></i></span><p class="org-cap">Four designers across four tribes and 28 squads, all reporting to me.</p></div><div><p class="org-h">Now</p><div class="org-tier"><span class="org-box me">Me</span></div><span class="org-stem" aria-hidden="true"></span><div class="org-tier"><span class="org-box ld">Lead</span><span class="org-box ld">Lead</span></div><span class="org-stem" aria-hidden="true"></span><span class="units" aria-hidden="true"><i class="ld"></i><i></i><i></i><i></i><i class="un ld"></i><i class="un"></i><i class="un"></i><i class="un"></i><i class="un"></i></span><p class="org-cap">A team of nine, with two leads who manage their own teams: one promoted from within, one hired externally. I line-manage the leads.</p></div></div><p class="org-key" aria-hidden="true"><span><i></i>In the team when I joined</span><span><i class="un"></i>Joined since</span><span><i class="ld" style="background: transparent"></i>Lead</span></p><p style="margin: 0">I also set up a weekly check-in, so everyone can raise blockers and ask for support without waiting for a one-to-one.</p><div class="ck" aria-label="Weekly check-in questions"><small>Weekly check-in · sent every Wednesday in Slack · 1–2 minutes</small><ol><li>How’s your mood this week?</li><li>How has your week been overall?</li><li>Any issues or blockers we should know about?</li><li>Is there anything you’d like support with from the team or your manager?</li><li>Any feedback or questions about how we’re working as a team?</li></ol><small>Answers go to each person’s manager, so we can step in early.</small></div></div>
+<section class="snap prose" aria-labelledby="lt-h">
+<h2 id="lt-h" class="pr-h">Leading the team</h2>
+<p class="pr-lead">A leadership layer, and a weekly pulse on how people are doing.</p><p>I line-manage the two leads, one promoted from within and one hired externally, and they manage their own teams. That frees me to work on priorities with tribe leadership.</p><p>I also set up a weekly check-in in Slack, so anyone can raise a blocker or ask for support without waiting for a one-to-one.</p>
 </section>
 
-<section class="snap" aria-labelledby="kr-h" style="border-top: 1px solid var(--line)">
-<h2 id="kr-h" style="margin: 0; padding: 32px 20px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">Results</h2>
-<div class="cols cols-4" style="background: var(--line); border-top: 1px solid var(--line)">
-<div class="kr"><p class="kr-v">9</p><span class="units" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="un"></i><i class="un"></i><i class="un"></i><i class="un"></i><i class="un"></i></span><p class="kr-l">Designers in the team, up from 4 when I joined in 2025.</p></div>
-<div class="kr"><p class="kr-v">4</p><p class="kr-l">Tribes with their own front door, one of the first things I put in place.</p></div>
-<div class="kr"><p class="kr-v">2</p><p class="kr-l">Lead-level people managers, one promoted from within.</p></div>
-<div class="kr"><p class="kr-v">28</p><p class="kr-l">Squads supported across Customer.</p></div>
-</div>
-<ul class="res-list"><li>The design leadership team adopted the roadmap approach in other areas of the business.</li><li>The visibility made the case for growing the team quickly.</li><li>In 2026, bringing teams onto one connected Jira workflow, from discovery to services.</li></ul>
+<section class="snap prose" aria-labelledby="kr-h">
+<h2 id="kr-h" class="pr-h">Results</h2>
+<dl class="pr-res"><div><dt>9</dt><dd>Designers in the team, up from 4 when I joined in 2025.</dd></div><div><dt>4</dt><dd>Tribes with their own front door.</dd></div><div><dt>2</dt><dd>Leads, one promoted from within.</dd></div><div><dt>28</dt><dd>Squads supported across Customer.</dd></div></dl><ul class="pr-list"><li>The design leadership team adopted the roadmap approach in other areas of the business.</li><li>In 2026, bringing teams onto one connected Jira workflow, from discovery to services.</li></ul>
 </section>
 
-<section class="lrn snap" style="border-top: 1px solid var(--line); padding: 32px 20px 96px; display: flex; flex-direction: column; gap: 24px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">What I learned</h2>
-<p data-reveal="r2" data-in="{{rv.r2}}" style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 400; font-size: var(--fs-1); line-height: 1.08; letter-spacing: -0.02em; max-width: 1320px"><span class="w" style="--i:0">A</span> <span class="w" style="--i:1">new</span> <span class="w" style="--i:2">area</span> <span class="w" style="--i:3">needs</span> <span class="w" style="--i:4">a</span> <span class="w" style="--i:5">fresh</span> <span class="w" style="--i:6">approach,</span> <span class="w" style="--i:7">not</span> <span class="w" style="--i:8">a</span> <span class="w" style="--i:9">copy</span> <span class="w" style="--i:10">of</span> <span class="w" style="--i:11">what</span> <span class="w" style="--i:12">worked</span> <span class="w" style="--i:13">before.</span> <span class="w" style="--i:14">When</span> <span class="w" style="--i:15">everyone</span> <span class="w" style="--i:16">can</span> <span class="w" style="--i:17">see</span> <span class="w" style="--i:18">the</span> <span class="w" style="--i:19">roadmap,</span> <span class="w" style="--i:20">prioritisation</span> <span class="w" style="--i:21">becomes</span> <span class="w" style="--i:22">a</span> <span class="w" style="--i:23">shared</span> <span class="w" style="--i:24">decision.</span></p>
+<section class="snap prose" aria-labelledby="wl-h">
+<h2 id="wl-h" class="pr-h">What I learned</h2>
+<p class="pr-lead" data-reveal="r2" data-in="{{rv.r2}}">A new area needs a fresh approach, not a copy of what worked before. When everyone can see the roadmap, prioritisation becomes a shared decision.</p>
 </section>
 
-<section class="snap cols cols-2" style="border-top: 1px solid var(--line); background: var(--line)">
-<h2 style="margin: 0; padding: 32px 20px; box-sizing: border-box; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">What I’d do differently</h2>
-<div style="min-width: 0; padding: 32px 20px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; font-size: var(--fs-b); line-height: 1.55"><p style="margin: 0; font-family: 'Geist', sans-serif; font-size: var(--fs-2); line-height: 1.15; letter-spacing: -0.02em">I’d set up the front door and the leadership structure from day one, rather than building them as we went.</p><p style="margin: 0; color: var(--muted)">I’d also give more hands-on support earlier to the designers who were newer to working at this scale.</p></div>
+<section class="snap prose pr-end" aria-labelledby="dd-h">
+<h2 id="dd-h" class="pr-h">What I’d do differently</h2>
+<p>I’d set up the front door and the leadership structure from day one, and give earlier hands-on support to designers newer to working at this scale.</p>
 </section>
 
 </article>
