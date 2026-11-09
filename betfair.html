@@ -368,6 +368,14 @@ section.snap.prose+section.snap.prose{padding-top:28px !important}
 .hdr-cta{display:inline-flex !important;opacity:1 !important;transform:none !important;pointer-events:auto !important;visibility:visible !important;color:var(--bg) !important}
 .hdr-r{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
 @media (max-width: 560px){.site-header{display:grid !important;grid-template-columns:minmax(0,1fr) auto;gap:10px 8px !important;padding:12px 16px !important}.site-header .hdr-r{display:contents}.site-header .ident{grid-column:1;grid-row:1}.site-header .theme-toggle{grid-column:2;grid-row:1;justify-self:end}.site-header nav[aria-label="Main"]{grid-column:1;grid-row:2;flex-wrap:nowrap !important;min-width:0}.site-header nav[aria-label="Main"] a{flex:1 1 auto;justify-content:center;padding:0 8px !important}.site-header .hdr-cta{grid-column:2;grid-row:2;padding:0 14px !important}.hdr-cta svg{display:none}}
+/* customer quotes */
+section.snap.cq{max-width:760px !important;margin:0 auto !important;padding:48px 20px 16px;box-sizing:border-box}
+.cq figure{margin:0;display:flex;flex-direction:column;gap:16px;padding-left:24px;border-left:3px solid var(--bright)}
+.cq blockquote{margin:0}
+.cq blockquote p{margin:0;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:var(--fs-1);line-height:1.2;color:var(--ink)}
+.cq figcaption{font-size:13px;line-height:1.5;color:var(--muted2)}
+.jm-q{display:block;margin-top:4px;font-style:italic;color:var(--ink);quotes:"“" "”"}
+.prose .pr-q{display:block;margin:8px 0 0;font-style:italic;color:var(--ink)}
 </style>
 
 </head>
@@ -435,8 +443,10 @@ section.snap.prose+section.snap.prose{padding-top:28px !important}
 
 <section class="snap prose" aria-labelledby="cu-h">
 <h2 id="cu-h" class="pr-h">What customers told us</h2>
-<ol class="pr-steps"><li><h3>Both prices, one app</h3><p>Customers liked seeing Sportsbook and Exchange odds side by side, but needed help to find it.</p></li><li><h3>The default matters</h3><p>People bet on whichever side they landed on, so opening on Sportsbook removed friction.</p></li><li><h3>Explainers didn’t teach</h3><p>Videos made the Exchange feel friendlier but didn’t show people how to use it. Guidance needed to live in the product.</p></li></ol>
+<ol class="pr-steps"><li><h3>Both prices, one app</h3><p>Customers liked seeing Sportsbook and Exchange odds side by side, but needed help to find it.<q class="pr-q">Now I know how to use it I would definitely look for different odds on the Exchange.</q></p></li><li><h3>The default matters</h3><p>People bet on whichever side they landed on, so opening on Sportsbook removed friction.</p></li><li><h3>Explainers didn’t teach</h3><p>Videos made the Exchange feel friendlier but didn’t show people how to use it. Guidance needed to live in the product.</p></li></ol>
 </section>
+
+<section class="snap cq" aria-label="Customer quote"><figure><blockquote><p>“I think it’s far more user friendly than other apps that I use.”</p></blockquote><figcaption>Betfair customer, testing the rebuilt app · 2020</figcaption></figure></section>
 
 <section class="snap prose" aria-labelledby="kd-h">
 <h2 id="kd-h" class="pr-h">Key decision</h2>
