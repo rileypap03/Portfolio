@@ -199,6 +199,15 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 .hdr-cta{display:inline-flex !important;opacity:1 !important;transform:none !important;pointer-events:auto !important;visibility:visible !important;color:var(--bg) !important}
 .hdr-r{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
 @media (max-width: 560px){.site-header{display:grid !important;grid-template-columns:minmax(0,1fr) auto;gap:10px 8px !important;padding:12px 16px !important}.site-header .hdr-r{display:contents}.site-header .ident{grid-column:1;grid-row:1}.site-header .theme-toggle{grid-column:2;grid-row:1;justify-self:end}.site-header nav[aria-label="Main"]{grid-column:1;grid-row:2;flex-wrap:nowrap !important;min-width:0}.site-header nav[aria-label="Main"] a{flex:1 1 auto;justify-content:center;padding:0 8px !important}.site-header .hdr-cta{grid-column:2;grid-row:2;padding:0 14px !important}.hdr-cta svg{display:none}}
+/* standalone links: colour wipe and arrow, no underline */
+a.lk{position:relative;isolation:isolate;display:inline-flex !important;align-items:center;gap:8px;padding:6px 10px !important;margin-left:-10px;min-height:44px;box-sizing:border-box;text-decoration:none !important;color:var(--accent) !important;transition:color .35s cubic-bezier(.16,1,.3,1)}
+a.lk::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+a.lk:hover::before,a.lk:focus-visible::before{transform:scaleX(1)}
+a.lk:hover,a.lk:focus-visible{color:var(--bg) !important}
+a.lk .lk-a{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+a.lk:hover .lk-a,a.lk:focus-visible .lk-a{transform:translateX(3px)}
+a.lk:hover .lk-a.ext,a.lk:focus-visible .lk-a.ext{transform:translate(2px,-2px)}
+@media (prefers-reduced-motion: reduce){a.lk,a.lk::before,a.lk .lk-a{transition:none}}
 </style>
 
 </head>
@@ -223,8 +232,8 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 <div style="display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: var(--fs-b); line-height: 1.5; color: var(--muted); max-width: 880px">20 years in digital product, leading teams of up to 18 through platform transformations. Now leading my teams’ move to AI-assisted ways of working.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: var(--fs-b)">
-<a href="#work" style="display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; text-decoration-color: var(--ul)">See selected work</a>
-<a href="/cv" style="display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; text-decoration-color: var(--ul)">View CV</a>
+<a class="lk" href="#work" style="display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; text-decoration-color: var(--ul)">See selected work<span class="lk-a" aria-hidden="true">→</span></a>
+<a class="lk" href="/cv" style="display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; text-decoration-color: var(--ul)">View CV<span class="lk-a" aria-hidden="true">→</span></a>
 </div>
 </div>
 </div>
@@ -312,7 +321,7 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 <section id="testimonials" data-nav="about" class="snap blk" style="border-top: 1px solid var(--line); display: flex; flex-direction: column">
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 32px 20px 24px">
 <h2 style="margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">What people say</h2>
-<a href="https://www.linkedin.com/in/-paulriley/details/recommendations/" target="_blank" rel="noopener" style="font-size: var(--fs-b); text-underline-offset: 4px; text-decoration-color: var(--ul)">Read them in full on LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+<a class="lk" href="https://www.linkedin.com/in/-paulriley/details/recommendations/" target="_blank" rel="noopener" style="font-size: var(--fs-b); text-underline-offset: 4px; text-decoration-color: var(--ul)">Read them in full on LinkedIn<span class="lk-a ext" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
 </div>
 <div class="tst-list"><figure class="tst"><blockquote><p class="tst-q">“He is a rare design leader who is equally effective in the boardroom and with his team.”</p><p class="tst-s">“At the same time, he helps build teams that grow and endure, providing clear expectations, fair progression and real trust to take on significant projects.”</p></blockquote><figcaption><span class="tst-n">Bruno Cirilo</span><span class="tst-r">Lead Product Designer, Betfair · Hired and managed by Paul for three years</span></figcaption></figure><figure class="tst"><blockquote><p class="tst-q">“He brought a friendly, approachable attitude to everything we did and created a safe space where people felt comfortable speaking up.”</p><p class="tst-s">“His tracking systems and thoughtful resource allocation consistently pointed us towards the highest ROI work.”</p></blockquote><figcaption><span class="tst-n">Denisa Pop</span><span class="tst-r">Lead Product Designer, Flutter UK &amp; Ireland · Reported to Paul</span></figcaption></figure></div>
 </section>
@@ -336,8 +345,8 @@ html.reveal-on [data-reveal][data-in="1"] .w{transition:opacity .5s,filter .55s,
 <div style="border-top: 1px solid var(--line); padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 8px; font-size: var(--fs-b); line-height: 1.5">
 <h2 style="margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em">Let's talk.</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 0 24px">
-<a href="mailto:rileypap03@gmail.com" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--ul)">rileypap03@gmail.com</a>
-<a href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--ul)">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+<a class="lk" href="mailto:rileypap03@gmail.com" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--ul)">rileypap03@gmail.com<span class="lk-a ext" aria-hidden="true">↗</span></a>
+<a class="lk" href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--ul)">LinkedIn<span class="lk-a ext" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
 </div>
 </div>
 </footer>
