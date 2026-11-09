@@ -343,6 +343,15 @@ section.snap.cq{max-width:760px !important;margin:0 auto !important;padding:48px
 .jm-meta .jm-line .jm-tag{margin:0 !important;font-size:13px !important;font-weight:600 !important;text-transform:none !important;letter-spacing:0 !important;color:var(--muted2) !important}
 .jm-meta .jm-line .jm-td{color:var(--accent) !important}
 .jm-meta{gap:14px !important}
+/* journey CTA: dark at rest, orange wipes in on hover */
+.jm-open{position:relative;isolation:isolate;overflow:hidden;background:var(--ink) !important;color:var(--bg) !important;font-size:var(--fs-b) !important;transition:color .35s cubic-bezier(.16,1,.3,1)}
+.jm-open::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.jm-open:hover::before,.jm-open:focus-visible::before{transform:scaleX(1)}
+.jm-open:hover,.jm-open:focus-visible{color:var(--bg) !important}
+@media (prefers-reduced-motion: reduce){.jm-open,.jm-open::before{transition:none}}
+.jm-meta .jm-line .jm-tag{font-size:var(--fs-b) !important}
+.jm-meta .jm-line:has(.jm-tag){grid-template-columns:84px minmax(0,1fr) !important}
+.jm-hint{font-size:var(--fs-b) !important}
 </style>
 
 </head>
@@ -411,7 +420,7 @@ section.snap.cq{max-width:760px !important;margin:0 auto !important;padding:48px
 
 <section class="snap prose" aria-labelledby="kr-h">
 <h2 id="kr-h" class="pr-h">Results</h2>
-<dl class="pr-res"><div><dt>9m</dt><dd>Sky Betting &amp; Gaming customers moved onto the shared platform in 2025. <a href="https://www.fool.com/earnings/call-transcripts/2025/08/08/flutter-flut-q2-2025-earnings-call-transcript/" target="_blank" rel="noopener">Flutter Q2 2025 results call<span class="sr-only"> (opens in new tab)</span></a></dd></div><div><dt>18 months</dt><dd>To deliver the migration on deadline, including a second phase that brought back Sky Bet’s character.</dd></div><div><dt>10</dt><dd>Designers in one team, half from Sky Bet and half from Betfair.</dd></div><div><dt>2</dt><dd>Leads, one from each side, after I made the case for an org change.</dd></div></dl><ul class="pr-list"><li>The staged rollout caught the “doesn’t feel like Sky Bet” feedback before full launch.</li><li>Other design teams adopted our ticket approach and team health checks.</li></ul>
+<dl class="pr-res"><div><dt>9m</dt><dd>Sky Betting &amp; Gaming customers moved onto the shared platform in 2025.</dd></div><div><dt>18 months</dt><dd>To deliver the migration on deadline, including a second phase that brought back Sky Bet’s character.</dd></div><div><dt>10</dt><dd>Designers in one team, half from Sky Bet and half from Betfair.</dd></div><div><dt>2</dt><dd>Leads, one from each side, after I made the case for an org change.</dd></div></dl><ul class="pr-list"><li>The staged rollout caught the “doesn’t feel like Sky Bet” feedback before full launch.</li><li>Other design teams adopted our ticket approach and team health checks.</li></ul>
 </section>
 
 <section class="snap prose" aria-labelledby="wl-h">
