@@ -11,7 +11,7 @@
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script defer src="/_vercel/insights/script.js"></script>
-<script>(function(){var P=function(v){var m=/^(dark|light)(?:[.|](\d+))?$/.exec(v||"");return m?{t:m[1],ts:+(m[2]||0)}:null},c=[];try{c.push(P(new URLSearchParams(location.search).get("theme")))}catch(e){}try{c.push(P(localStorage.getItem("pr-theme")))}catch(e){}try{c.push(P(sessionStorage.getItem("pr-theme")))}catch(e){}try{var n=/pr-theme=([^;]+)/.exec(window.name||"");c.push(P(n&&n[1]))}catch(e){}c=c.filter(Boolean).sort(function(a,b){return b.ts-a.ts});document.documentElement.dataset.theme=c[0]?c[0].t:"dark"})();</script>
+<script>(function(){var P=function(v){var m=/^(dark|light)(?:[.|](\d+))?$/.exec(v||"");return m?{t:m[1],ts:+(m[2]||0)}:null},c=[];try{c.push(P(new URLSearchParams(location.search).get("theme")))}catch(e){}try{c.push(P(localStorage.getItem("pr-theme")))}catch(e){}try{c.push(P(sessionStorage.getItem("pr-theme")))}catch(e){}try{var n=/pr-theme=([^;]+)/.exec(window.name||"");c.push(P(n&&n[1]))}catch(e){}try{history.scrollRestoration="manual"}catch(e){}c=c.filter(Boolean).sort(function(a,b){return b.ts-a.ts});document.documentElement.dataset.theme=c[0]?c[0].t:"dark"})();</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Young+Serif&amp;display=swap">
 <style>
@@ -467,7 +467,7 @@ class Component extends DCLogic {
       try { localStorage.setItem("pr-theme", v); } catch (e) {} try { sessionStorage.setItem("pr-theme", v); } catch (e) {}
       try { window.name = (window.name || "").replace(/pr-theme=[^;]*;?/, "") + "pr-theme=" + v + ";"; } catch (e) {} };
     const prApply = () => { const g = prGet(); if (g) { document.documentElement.dataset.theme = g.t; prSet(g.t, g.ts); } else { document.documentElement.dataset.theme = "dark"; } };
-    prApply(); requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("pr-ready")));
+    prApply(); requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("pr-ready"))); try { history.scrollRestoration = "manual"; } catch (e) {} const prTop = () => { if (!location.hash) window.scrollTo(0, 0); }; prTop(); requestAnimationFrame(prTop); if (!window.__prTopL) { window.__prTopL = true; window.addEventListener("pageshow", prTop); }
     try { const u = new URL(location.href); if (u.searchParams.has("theme")) { u.searchParams.delete("theme"); history.replaceState(history.state, "", u.pathname + u.search + u.hash); } } catch (e) {}
     if (!window.__prTheme) { window.__prTheme = true;
       window.addEventListener("pageshow", prApply); window.addEventListener("storage", (e) => { if (!e.key || e.key === "pr-theme") prApply(); }); window.addEventListener("focus", prApply); document.addEventListener("visibilitychange", () => { if (!document.hidden) prApply(); });
