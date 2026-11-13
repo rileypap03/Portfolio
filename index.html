@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
 <style>
-:root{--bg:#0E0F0D;--ink:#F2EFE6;--soft:#A29E92;--rule:#2A2B27;--accent:#FF6A2B;--deep:#171815;--gut:clamp(16px,3.4vw,48px)}
+:root{--bg:#0E0F0D;--ink:#F2EFE6;--soft:#A29E92;--rule:#1F201D;--accent:#FF6A2B;--deep:#171815;--gut:clamp(16px,3.4vw,48px)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:18px;line-height:1.45;-webkit-font-smoothing:antialiased}
@@ -30,9 +30,9 @@ img{max-width:100%}
 
 .b-top{position:sticky;top:0;z-index:10;background:rgba(14,15,13,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .b-top .b-wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;padding-bottom:16px}
-.b-name.lz{padding:6px 14px 6px 8px;margin:-6px -14px -6px -8px}
-.b-name{font-weight:800;font-size:22px;display:flex;align-items:center;gap:10px;text-decoration:none}
-.b-name i{display:block;width:14px;height:14px;background:var(--accent)}
+.b-name{font-weight:800;font-size:22px;display:flex;align-items:baseline;gap:0;text-decoration:none}
+.b-name i{display:inline-block;width:.26em;height:.26em;margin-left:.08em;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
 .b-nav{display:flex;gap:6px}
 .b-nav a{text-decoration:none;font-size:15px;padding:10px 16px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap}
 .b-nav a.cv{background:var(--accent);border-color:var(--accent);color:#120A05;font-weight:600;--lz:var(--ink)}
@@ -62,7 +62,7 @@ img{max-width:100%}
 .b-label .mono{color:var(--soft)}
 
 .b-proj{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.b-card{position:relative;border-radius:28px;overflow:hidden;background-color:var(--deep);--gl:rgba(255,255,255,.055);background-image:linear-gradient(var(--gl) 1px,transparent 1px),linear-gradient(90deg,var(--gl) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;min-height:620px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
+.b-card{position:relative;border-radius:12px;overflow:hidden;background-color:var(--deep);--gl:rgba(255,255,255,.035);background-image:linear-gradient(var(--gl) 1px,transparent 1px),linear-gradient(90deg,var(--gl) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;min-height:620px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
 .b-card.wide{grid-column:1/3;min-height:660px;flex-direction:row}
 .b-card .txt{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:16px;max-width:540px;position:relative;z-index:2}
 .b-card h3{margin:0;font-weight:800;font-size:clamp(34px,3.9vw,56px);line-height:.98;letter-spacing:-.03em}
@@ -81,7 +81,7 @@ img{max-width:100%}
 .b-ph.l{transform:rotate(-5deg)}
 .sky{background-color:#0F2A8C}
 .bf{background-color:#2B2410}
-.fl{background-color:var(--accent);color:#120A05;--gl:rgba(18,10,5,.08)}
+.fl{background-color:var(--accent);color:#120A05;--gl:rgba(18,10,5,.06)}
 .fl p{color:rgba(18,10,5,.75)}
 .fl .go{--pill:#120A05;--on:var(--accent)}
 .b-grid9{display:grid;grid-template-columns:repeat(3,clamp(56px,6vw,88px));gap:14px;margin:auto}
@@ -89,9 +89,9 @@ img{max-width:100%}
 .b-grid9 i.n{background:#120A05}
 
 .b-made .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.b-shot{border-radius:24px;overflow:hidden;background-color:var(--deep);background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;padding:28px 28px 0;text-decoration:none;display:block}
+.b-shot{border-radius:12px;overflow:hidden;background-color:var(--deep);background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;padding:28px 28px 0;text-decoration:none;display:block}
 
-.b-shot img{display:block;width:100%;border-radius:12px 12px 0 0}
+.b-shot img{display:block;width:100%;border-radius:6px 6px 0 0}
 .b-shot .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px 0 24px}
 .b-shot .cap .mono{color:var(--soft)}
 
@@ -104,22 +104,24 @@ img{max-width:100%}
 .b-intro{margin:0 0 40px;max-width:900px;font-size:clamp(22px,2.4vw,32px);line-height:1.25;letter-spacing:-.01em}
 
 .b-human{margin-top:16px;display:grid;grid-template-columns:5fr 7fr;gap:16px}
-.b-photo{position:relative;border-radius:24px;overflow:hidden;min-height:520px;margin:0;background:var(--deep)}
+.b-photo{position:relative;border-radius:12px;overflow:hidden;min-height:520px;margin:0;background:var(--deep)}
 .b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .b-photo figcaption{position:absolute;left:20px;bottom:20px;background:var(--bg);padding:8px 12px;border-radius:999px}
-.b-q{border-radius:24px;background:var(--ink);color:var(--bg);padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;margin:0}
+.b-q{border-radius:12px;background:var(--ink);color:var(--bg);padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;margin:0}
 .b-q blockquote{margin:0;font-weight:600;font-size:clamp(30px,3.2vw,46px);line-height:1.05;letter-spacing:-.02em}
 .b-q blockquote p{margin:0}
 .b-qs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.b-qs figure{margin:0;border-radius:24px;background:var(--bg);border:1px solid #4A4B45;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.b-qs figure{margin:0;border-radius:12px;background:var(--bg);border:1px solid #2C2D29;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
 .b-qs blockquote{margin:0;font-size:20px;line-height:1.3}
 .b-qs blockquote p{margin:0}
-.b-qs figcaption,.b-q figcaption{display:flex;flex-direction:column;gap:2px}
+.b-qs figcaption,.b-q figcaption{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.who{display:flex;flex-direction:column;gap:2px}
+.li{flex:none;opacity:.55}
 .b-qs figcaption .mono{color:var(--soft)}
 .b-more{display:inline-flex;margin-top:24px;color:var(--ink);text-decoration:none}
 
 .b-team{display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:340px 340px;gap:16px}
-.b-team img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.b-team img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px}
 .b-team img.tall{grid-row:1/3;grid-column:2}
 .b-team-cap{margin:20px 0 0;color:var(--soft)}
 
@@ -169,7 +171,6 @@ img{max-width:100%}
 }
 @media (max-width:480px){
   .b-nav a{padding:9px 13px;font-size:14px}
-  .b-name.lz{padding:6px 14px 6px 8px;margin:-6px -14px -6px -8px}
 .b-name{font-size:19px}
   .b-ph{border-width:5px;border-radius:26px}
   .b-shot{padding:16px 16px 0}
@@ -183,7 +184,7 @@ img{max-width:100%}
 <div id="dc-root"></div>
 <template id="dc-tpl">
 
-<header class="b-top"><div class="b-wrap"><a class="b-name lz" href="#top"><i></i>Paul Riley</a><nav class="b-nav" aria-label="Main"><a class="lz hide-s" href="#work">Work</a><a class="lz hide-s" href="#lead">How I lead</a><a class="lz" href="#contact">Let’s talk</a><a class="lz cv" href="/cv">CV</a></nav></div></header>
+<header class="b-top"><div class="b-wrap"><a class="b-name" href="#top">Paul Riley<i aria-hidden="true"></i></a><nav class="b-nav" aria-label="Main"><a class="lz hide-s" href="#work">Work</a><a class="lz hide-s" href="#lead">How I lead</a><a class="lz" href="#contact">Let’s talk</a><a class="lz cv" href="/cv">CV</a></nav></div></header>
 
 <main id="top" class="b-wrap">
 <section class="b-hero">
@@ -198,7 +199,6 @@ img{max-width:100%}
 <div><b>28</b><span>squads supported at Flutter UKI</span></div>
 </div>
 
-<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:24px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:27px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:22px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:19px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:26px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:35px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:27px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:45px"></li><li aria-hidden="true"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="height:24px"></li><li aria-hidden="true"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="height:22px"></li><li aria-hidden="true"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="height:19px"></li><li aria-hidden="true"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="height:26px"></li><li aria-hidden="true"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="height:35px"></li><li aria-hidden="true"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="height:45px"></li></ul></div></section>
 
 <div class="b-label" id="work"><h2>Selected work</h2><span class="mono">01–03</span></div>
 <div class="b-proj">
@@ -235,12 +235,12 @@ img{max-width:100%}
 </div>
 <div class="b-human" style="margin-top:48px">
 <figure class="b-photo"><img data-pix src="/assets/team-workshop.jpg" alt="A team mapping a service journey together at a whiteboard" loading="lazy"><figcaption class="mono">A workshop I set up for the team</figcaption></figure>
-<figure class="b-q"><blockquote><p>“He gives you real autonomy, without added pressure or unnecessary constraints, but he’s always there to sharpen the thinking.”</p></blockquote><figcaption><b>Diogo Fernandes</b><span class="mono">Product Designer</span></figcaption></figure>
+<figure class="b-q"><blockquote><p>“He gives you real autonomy, without added pressure or unnecessary constraints, but he’s always there to sharpen the thinking.”</p></blockquote><figcaption><span class="who"><b>Diogo Fernandes</b><span class="mono">Product Designer</span></span><svg class="li" aria-label="LinkedIn recommendation" role="img" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></figcaption></figure>
 </div>
 <div class="b-qs">
-<figure><blockquote><p>“One of Paul’s particular strengths is his ability to build and articulate a design strategy that connects business value to product strategy…”</p></blockquote><figcaption><b>Alan Conlan</b><span class="mono">Director of Product Design</span></figcaption></figure>
-<figure><blockquote><p>“He is a rare design leader who is equally effective in the boardroom and with his team.”</p></blockquote><figcaption><b>Bruno Cirilo</b><span class="mono">Lead Product Designer</span></figcaption></figure>
-<figure><blockquote><p>“He brought a friendly, approachable attitude to everything we did and created a safe space where people felt comfortable speaking up.”</p></blockquote><figcaption><b>Denisa Pop</b><span class="mono">Lead Product Designer</span></figcaption></figure>
+<figure><blockquote><p>“One of Paul’s particular strengths is his ability to build and articulate a design strategy that connects business value to product strategy…”</p></blockquote><figcaption><span class="who"><b>Alan Conlan</b><span class="mono">Director of Product Design</span></span><svg class="li" aria-label="LinkedIn recommendation" role="img" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></figcaption></figure>
+<figure><blockquote><p>“He is a rare design leader who is equally effective in the boardroom and with his team.”</p></blockquote><figcaption><span class="who"><b>Bruno Cirilo</b><span class="mono">Lead Product Designer</span></span><svg class="li" aria-label="LinkedIn recommendation" role="img" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></figcaption></figure>
+<figure><blockquote><p>“He brought a friendly, approachable attitude to everything we did and created a safe space where people felt comfortable speaking up.”</p></blockquote><figcaption><span class="who"><b>Denisa Pop</b><span class="mono">Lead Product Designer</span></span><svg class="li" aria-label="LinkedIn recommendation" role="img" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></figcaption></figure>
 </div>
 <a class="b-more lz lz-t" href="https://www.linkedin.com/in/-paulriley/details/recommendations/" target="_blank" rel="noopener">Read them in full on LinkedIn ↗<span class="sr-only"> (opens in new tab)</span></a>
 </section>
@@ -258,6 +258,8 @@ img{max-width:100%}
 </section>
 
 
+
+<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:24px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:27px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:22px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:19px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:26px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:35px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:27px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:45px"></li><li aria-hidden="true"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="height:24px"></li><li aria-hidden="true"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="height:22px"></li><li aria-hidden="true"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="height:19px"></li><li aria-hidden="true"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="height:26px"></li><li aria-hidden="true"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="height:35px"></li><li aria-hidden="true"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="height:45px"></li></ul></div></section>
 
 <footer id="contact" class="b-foot"><h2>Let’s<br><span>talk.</span></h2>
 <nav class="b-links" aria-label="Contact"><a class="lz" href="mailto:rileypap03@gmail.com">Email <span aria-hidden="true">↗</span></a><a class="lz" href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a><a class="lz" href="/assets/Paul-Riley-CV.pdf" download="Paul-Riley-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></nav>
