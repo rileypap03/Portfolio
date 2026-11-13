@@ -30,13 +30,18 @@ img{max-width:100%}
 
 .b-top{position:sticky;top:0;z-index:10;background:rgba(14,15,13,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .b-top .b-wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;padding-bottom:16px}
+.b-name.lz{padding:6px 14px 6px 8px;margin:-6px -14px -6px -8px}
 .b-name{font-weight:800;font-size:22px;display:flex;align-items:center;gap:10px;text-decoration:none}
 .b-name i{display:block;width:14px;height:14px;background:var(--accent)}
 .b-nav{display:flex;gap:6px}
-.b-nav a{text-decoration:none;font-size:15px;padding:10px 16px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap;transition:border-color .2s,background .2s}
-.b-nav a:hover{border-color:var(--soft)}
-.b-nav a.cv{background:var(--accent);border-color:var(--accent);color:#120A05;font-weight:600}
-.b-nav a.cv:hover{background:#ff8550}
+.b-nav a{text-decoration:none;font-size:15px;padding:10px 16px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap}
+.b-nav a.cv{background:var(--accent);border-color:var(--accent);color:#120A05;font-weight:600;--lz:var(--ink)}
+/* lozenge hover for every link */
+.lz{position:relative;isolation:isolate;--lz:var(--accent);--lz-on:#120A05;transition:color .3s}
+.lz::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:var(--lz);z-index:-1;transition:width .45s cubic-bezier(.16,1,.3,1)}
+.lz:hover::before,.lz:focus-visible::before,a:hover>.lz::before,a:focus-visible>.lz::before{width:100%}
+.lz:hover,.lz:focus-visible,a:hover>.lz,a:focus-visible>.lz{color:var(--lz-on)}
+.lz-t{padding:6px 12px;margin:-6px -12px;border-radius:999px}
 
 .b-hero{padding:clamp(48px,7vw,96px) 0 56px}
 .b-hero h1{margin:0;font-weight:800;font-size:clamp(52px,10.4vw,150px);line-height:.9;letter-spacing:-.045em;max-width:13ch}
@@ -85,7 +90,7 @@ img{max-width:100%}
 
 .b-made .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .b-shot{border-radius:24px;overflow:hidden;background-color:var(--deep);background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;padding:28px 28px 0;text-decoration:none;display:block}
-a.b-shot:hover b{color:var(--accent)}
+
 .b-shot img{display:block;width:100%;border-radius:12px 12px 0 0}
 .b-shot .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px 0 24px}
 .b-shot .cap .mono{color:var(--soft)}
@@ -106,29 +111,38 @@ a.b-shot:hover b{color:var(--accent)}
 .b-q blockquote{margin:0;font-weight:600;font-size:clamp(30px,3.2vw,46px);line-height:1.05;letter-spacing:-.02em}
 .b-q blockquote p{margin:0}
 .b-qs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.b-qs figure{margin:0;border-radius:24px;background:var(--deep);padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.b-qs figure{margin:0;border-radius:24px;background:var(--bg);border:1px solid #4A4B45;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
 .b-qs blockquote{margin:0;font-size:20px;line-height:1.3}
 .b-qs blockquote p{margin:0}
 .b-qs figcaption,.b-q figcaption{display:flex;flex-direction:column;gap:2px}
 .b-qs figcaption .mono{color:var(--soft)}
-.b-more{display:inline-flex;margin-top:20px;color:var(--soft);text-underline-offset:4px}
-.b-more:hover{color:var(--ink)}
+.b-more{display:inline-flex;margin-top:24px;color:var(--ink);text-decoration:none}
 
 .b-team{display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:340px 340px;gap:16px}
 .b-team img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
 .b-team img.tall{grid-row:1/3;grid-column:2}
 .b-team-cap{margin:20px 0 0;color:var(--soft)}
 
-.b-where{margin-top:clamp(72px,8vw,120px);padding:24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline}
-.b-where .mono{color:var(--soft);margin-right:8px}
-.b-where span.n{font-weight:600;font-size:20px}
+.b-where{margin-top:clamp(72px,8vw,120px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.b-where>.mono{display:block;padding:20px 0 0;color:var(--soft)}
+.b-mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.b-mq ul{display:flex;width:max-content;margin:0;padding:28px 0 24px;list-style:none;animation:mq 40s linear infinite}
+.b-mq:hover ul{animation-play-state:paused}
+.b-mq li{flex:none;width:clamp(170px,16vw,230px);display:flex;flex-direction:column;align-items:center;gap:16px}
+.b-mq .lg{height:56px;display:flex;align-items:center}
+.b-mq img{display:block;width:auto;max-width:150px;filter:invert(1);opacity:.78;transition:opacity .3s}
+.b-mq li:hover img{opacity:1}
+.b-mq .mono{color:var(--soft);font-size:12px;text-align:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.b-mq ul{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.b-mq ul li[aria-hidden]{display:none}}
 
 .b-foot{margin:clamp(72px,8vw,120px) 0 0;padding:clamp(40px,5vw,56px) 0 48px;display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
 .b-foot h2{margin:0;font-weight:800;font-size:clamp(84px,12vw,170px);line-height:.85;letter-spacing:-.05em}
 .b-foot h2 span{color:var(--accent)}
 .b-links{display:flex;flex-direction:column;gap:6px;min-width:260px}
-.b-links a{display:flex;justify-content:space-between;gap:24px;padding:14px 0;border-bottom:1px solid var(--rule);text-decoration:none;font-size:20px;font-weight:600}
-.b-links a:hover{color:var(--accent)}
+.b-links a{display:flex;justify-content:space-between;gap:24px;padding:14px 18px;margin:0 -18px;text-decoration:none;font-size:20px;font-weight:600;border-radius:999px}
+.b-links a+a{box-shadow:0 -1px 0 var(--rule)}
+.b-links a:hover+a{box-shadow:none}
 .b-base{display:flex;justify-content:space-between;padding:20px 0 32px;border-top:1px solid var(--rule);color:var(--soft)}
 
 @media (max-width:900px){
@@ -156,7 +170,8 @@ a.b-shot:hover b{color:var(--accent)}
 }
 @media (max-width:480px){
   .b-nav a{padding:9px 13px;font-size:14px}
-  .b-name{font-size:19px}
+  .b-name.lz{padding:6px 14px 6px 8px;margin:-6px -14px -6px -8px}
+.b-name{font-size:19px}
   .b-ph{border-width:5px;border-radius:26px}
   .b-shot{padding:16px 16px 0}
   .b-shot .cap{flex-direction:column;gap:4px}
@@ -169,7 +184,7 @@ a.b-shot:hover b{color:var(--accent)}
 <div id="dc-root"></div>
 <template id="dc-tpl">
 
-<header class="b-top"><div class="b-wrap"><a class="b-name" href="#top"><i></i>Paul Riley</a><nav class="b-nav" aria-label="Main"><a class="hide-s" href="#work">Work</a><a class="hide-s" href="#lead">How I lead</a><a href="#contact">Let’s talk</a><a class="cv" href="/cv">CV</a></nav></div></header>
+<header class="b-top"><div class="b-wrap"><a class="b-name lz" href="#top"><i></i>Paul Riley</a><nav class="b-nav" aria-label="Main"><a class="lz hide-s" href="#work">Work</a><a class="lz hide-s" href="#lead">How I lead</a><a class="lz" href="#contact">Let’s talk</a><a class="lz cv" href="/cv">CV</a></nav></div></header>
 
 <main id="top" class="b-wrap">
 <section class="b-hero">
@@ -203,8 +218,8 @@ a.b-shot:hover b{color:var(--accent)}
 <section class="b-made">
 <div class="b-label"><h2>Still making things.</h2><span class="mono">Built with AI</span></div>
 <div class="row">
-<a class="b-shot" href="/leadership-loop"><img src="/assets/963452ed986e63d5287e19d37b02930e.jpg" alt="Leadership Loop dashboard"><div class="cap"><b>Leadership Loop →</b><span class="mono">A coaching tool for my leads</span></div></a>
-<div class="b-shot"><img src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends dashboard (sample data)"><div class="cap"><b>BetsFriends</b><span class="mono">A World Cup bet tracker for friends</span></div></div>
+<a class="b-shot" href="/leadership-loop"><img data-pix src="/assets/963452ed986e63d5287e19d37b02930e.jpg" alt="Leadership Loop dashboard"><div class="cap"><b class="lz lz-t">Leadership Loop →</b><span class="mono">A coaching tool for my leads</span></div></a>
+<div class="b-shot"><img data-pix src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends dashboard (sample data)"><div class="cap"><b>BetsFriends</b><span class="mono">A World Cup bet tracker for friends</span></div></div>
 </div>
 </section>
 
@@ -218,7 +233,7 @@ a.b-shot:hover b{color:var(--accent)}
 <div><h3>AI in the workflow</h3><p>Leading teams to use AI where it helps: a single source of truth, connected workflows and faster ways into complex problems.</p></div>
 </div>
 <div class="b-human" style="margin-top:48px">
-<figure class="b-photo"><img src="/assets/team-workshop.jpg" alt="A team mapping a service journey together at a whiteboard" loading="lazy"><figcaption class="mono">A workshop I set up for the team</figcaption></figure>
+<figure class="b-photo"><img data-pix src="/assets/team-workshop.jpg" alt="A team mapping a service journey together at a whiteboard" loading="lazy"><figcaption class="mono">A workshop I set up for the team</figcaption></figure>
 <figure class="b-q"><blockquote><p>“He gives you real autonomy, without added pressure or unnecessary constraints, but he’s always there to sharpen the thinking.”</p></blockquote><figcaption><b>Diogo Fernandes</b><span class="mono">Product Designer</span></figcaption></figure>
 </div>
 <div class="b-qs">
@@ -226,27 +241,27 @@ a.b-shot:hover b{color:var(--accent)}
 <figure><blockquote><p>“He is a rare design leader who is equally effective in the boardroom and with his team.”</p></blockquote><figcaption><b>Bruno Cirilo</b><span class="mono">Lead Product Designer</span></figcaption></figure>
 <figure><blockquote><p>“He brought a friendly, approachable attitude to everything we did and created a safe space where people felt comfortable speaking up.”</p></blockquote><figcaption><b>Denisa Pop</b><span class="mono">Lead Product Designer</span></figcaption></figure>
 </div>
-<a class="b-more" href="https://www.linkedin.com/in/-paulriley/details/recommendations/" target="_blank" rel="noopener">Read them in full on LinkedIn ↗<span class="sr-only"> (opens in new tab)</span></a>
+<a class="b-more lz lz-t" href="https://www.linkedin.com/in/-paulriley/details/recommendations/" target="_blank" rel="noopener">Read them in full on LinkedIn ↗<span class="sr-only"> (opens in new tab)</span></a>
 </section>
 
 <section id="team">
 <div class="b-label"><h2>The best bit is the team.</h2></div>
 <div class="b-team">
-<img src="/assets/team-exercise.jpg" alt="Betfair and Sky Bet designers on their feet at a get-together before the migration began" loading="lazy">
-<img class="tall" src="/assets/team-painting.jpg" alt="Painting a shared canvas with the heads of product as the Sky Bet work began" loading="lazy">
-<img src="/assets/team-ducks.jpg" alt="Our design team introduced as rubber ducks at a talk in Dublin" loading="lazy">
-<img src="/assets/team-day.jpg" alt="Both design teams together a month before the Sky Bet move kicked off" loading="lazy">
-<img src="/assets/team-mission.jpg" alt="A small group talking through a team mission" loading="lazy">
+<img data-pix src="/assets/team-exercise.jpg" alt="Betfair and Sky Bet designers on their feet at a get-together before the migration began" loading="lazy">
+<img data-pix class="tall" src="/assets/team-painting.jpg" alt="Painting a shared canvas with the heads of product as the Sky Bet work began" loading="lazy">
+<img data-pix src="/assets/team-ducks.jpg" alt="Our design team introduced as rubber ducks at a talk in Dublin" loading="lazy">
+<img data-pix src="/assets/team-day.jpg" alt="Both design teams together a month before the Sky Bet move kicked off" loading="lazy">
+<img data-pix src="/assets/team-mission.jpg" alt="A small group talking through a team mission" loading="lazy">
 </div>
 <p class="mono b-team-cap">Two design teams meeting before the Sky Bet move · painting with the heads of product · our team as ducks in Dublin (I’m in the bowler hat)</p>
 </section>
 
-<div class="b-where"><span class="mono">Where I’ve worked</span><span class="n">Flutter</span><span class="n">Sky Bet</span><span class="n">Paddy Power Betfair</span><span class="n">Wunderman</span><span class="n">R/GA</span><span class="n">Sapient</span><span class="n">Profero</span><span class="n">SixandCo</span></div>
+<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul><li><span class="lg"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:30px"></span><span class="mono">Flutter Entertainment</span></li><li><span class="lg"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:34px"></span><span class="mono">Sky Bet</span></li><li><span class="lg"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:28px"></span><span class="mono">Paddy Power Betfair</span></li><li><span class="lg"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:24px"></span><span class="mono">Wunderman</span></li><li><span class="lg"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:32px"></span><span class="mono">R/GA</span></li><li><span class="lg"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:44px"></span><span class="mono">Sapient</span></li><li><span class="lg"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:34px"></span><span class="mono">Profero</span></li><li><span class="lg"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:56px"></span><span class="mono">SixandCo / FullSix</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="height:30px"></span><span class="mono">Flutter Entertainment</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="height:34px"></span><span class="mono">Sky Bet</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="height:28px"></span><span class="mono">Paddy Power Betfair</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="height:24px"></span><span class="mono">Wunderman</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="height:32px"></span><span class="mono">R/GA</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="height:44px"></span><span class="mono">Sapient</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="height:34px"></span><span class="mono">Profero</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="height:56px"></span><span class="mono">SixandCo / FullSix</span></li></ul></div></section>
 
 <footer id="contact" class="b-foot"><h2>Let’s<br><span>talk.</span></h2>
-<nav class="b-links" aria-label="Contact"><a href="mailto:rileypap03@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a><a href="/assets/Paul-Riley-CV.pdf" download="Paul-Riley-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></nav>
+<nav class="b-links" aria-label="Contact"><a class="lz" href="mailto:rileypap03@gmail.com">Email <span aria-hidden="true">↗</span></a><a class="lz" href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a><a class="lz" href="/assets/Paul-Riley-CV.pdf" download="Paul-Riley-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></nav>
 </footer>
-<div class="b-base mono"><span>© 2026 Paul Riley</span><a href="#top" style="text-decoration:none">Back to top ↑</a></div>
+<div class="b-base mono"><span>© 2026 Paul Riley</span><a class="lz lz-t" href="#top" style="text-decoration:none">Back to top ↑</a></div>
 </main>
 
 </template>
@@ -262,13 +277,16 @@ class Component extends DCLogic {
       if (img.__pix) return; img.__pix = true;
       const host = img.parentElement; if (!host) return;
       const w = img.offsetWidth, h = img.offsetHeight; if (w < 40 || h < 40) return;
+      const cs = getComputedStyle(img), nw = img.naturalWidth, nh = img.naturalHeight; let s0x = 0, s0y = 0, s0w = nw, s0h = nh;
+      if (cs.objectFit === 'cover') { const sc = Math.max(w / nw, h / nh); s0w = Math.min(nw, w / sc); s0h = Math.min(nh, h / sc); s0x = (nw - s0w) / 2; s0y = (nh - s0h) / 2; }
+      if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
       const dpr = Math.min(2, window.devicePixelRatio || 1);
       const cv = document.createElement('canvas'); cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
-      cv.style.cssText = 'position:absolute;left:' + img.offsetLeft + 'px;top:' + img.offsetTop + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:none;z-index:2';
+      cv.style.cssText = 'position:absolute;left:' + img.offsetLeft + 'px;top:' + img.offsetTop + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:none;z-index:2;border-radius:' + cs.borderRadius;
       host.appendChild(cv); const ctx = cv.getContext('2d');
       const layers = steps.map((st) => { const b = st * dpr; const tw = Math.max(1, Math.ceil(cv.width / b)), th = Math.max(1, Math.ceil(cv.height / b));
         const sm = document.createElement('canvas'); sm.width = tw; sm.height = th; const sx = sm.getContext('2d');
-        try { sx.drawImage(img, 0, 0, tw, th); } catch (e) { return null; }
+        try { sx.drawImage(img, s0x, s0y, s0w, s0h, 0, 0, tw, th); } catch (e) { return null; }
         const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height; const lx = L.getContext('2d'); lx.imageSmoothingEnabled = false;
         lx.drawImage(sm, 0, 0, tw, th, 0, 0, tw * b, th * b); return L; });
       if (layers.some((l) => !l)) { cv.remove(); return; }
