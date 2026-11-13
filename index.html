@@ -125,12 +125,15 @@ img{max-width:100%}
 
 .b-where{margin-top:clamp(56px,6vw,88px)}
 .b-where>.mono{display:block;margin-bottom:16px;color:var(--soft)}
-.b-lg{display:grid;grid-template-columns:repeat(8,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.b-lg li{display:flex;align-items:center;justify-content:center;height:120px;padding:0 18px}
-.b-lg li+li{border-left:1px solid var(--rule)}
+.b-mq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.b-lg{display:flex;width:max-content;margin:0;padding:0;list-style:none;animation:mq 45s linear infinite}
+.b-mq:hover .b-lg{animation-play-state:paused}
+.b-lg li{flex:none;width:clamp(150px,15vw,210px);height:120px;display:flex;align-items:center;justify-content:center;padding:0 22px;border-right:1px solid var(--rule)}
 .b-lg img{display:block;width:auto;max-width:100%;filter:invert(1);opacity:.72;transition:opacity .3s}
 .b-lg li:hover img{opacity:1}
-@media (max-width:900px){.b-lg{grid-template-columns:repeat(4,1fr)}.b-lg li{height:96px}.b-lg li:nth-child(5){border-left:0}.b-lg li:nth-child(n+5){border-top:1px solid var(--rule)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (max-width:900px){.b-lg li{height:96px}}
+@media (prefers-reduced-motion:reduce){.b-lg{animation:none}}
 
 .b-foot{margin:clamp(72px,8vw,120px) 0 0;padding:clamp(40px,5vw,56px) 0 48px;display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
 .b-foot h2{margin:0;font-weight:800;font-size:clamp(84px,12vw,170px);line-height:.85;letter-spacing:-.05em}
@@ -195,7 +198,7 @@ img{max-width:100%}
 <div><b>28</b><span>squads supported at Flutter UKI</span></div>
 </div>
 
-<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:24px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:27px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:22px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:19px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:26px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:35px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:27px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:45px"></li></ul></section>
+<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:24px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:27px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:22px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:19px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:26px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:35px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:27px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:45px"></li><li aria-hidden="true"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="height:24px"></li><li aria-hidden="true"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="height:22px"></li><li aria-hidden="true"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="height:19px"></li><li aria-hidden="true"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="height:26px"></li><li aria-hidden="true"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="height:35px"></li><li aria-hidden="true"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="height:27px"></li><li aria-hidden="true"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="height:45px"></li></ul></div></section>
 
 <div class="b-label" id="work"><h2>Selected work</h2><span class="mono">01–03</span></div>
 <div class="b-proj">
