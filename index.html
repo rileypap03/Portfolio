@@ -123,18 +123,14 @@ img{max-width:100%}
 .b-team img.tall{grid-row:1/3;grid-column:2}
 .b-team-cap{margin:20px 0 0;color:var(--soft)}
 
-.b-where{margin-top:clamp(72px,8vw,120px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.b-where>.mono{display:block;padding:20px 0 0;color:var(--soft)}
-.b-mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.b-mq ul{display:flex;width:max-content;margin:0;padding:28px 0 24px;list-style:none;animation:mq 40s linear infinite}
-.b-mq:hover ul{animation-play-state:paused}
-.b-mq li{flex:none;width:clamp(170px,16vw,230px);display:flex;flex-direction:column;align-items:center;gap:16px}
-.b-mq .lg{height:56px;display:flex;align-items:center}
-.b-mq img{display:block;width:auto;max-width:150px;filter:invert(1);opacity:.78;transition:opacity .3s}
-.b-mq li:hover img{opacity:1}
-.b-mq .mono{color:var(--soft);font-size:12px;text-align:center}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.b-mq ul{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.b-mq ul li[aria-hidden]{display:none}}
+.b-where{margin-top:clamp(56px,6vw,88px)}
+.b-where>.mono{display:block;margin-bottom:16px;color:var(--soft)}
+.b-lg{display:grid;grid-template-columns:repeat(8,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.b-lg li{display:flex;align-items:center;justify-content:center;height:120px;padding:0 18px}
+.b-lg li+li{border-left:1px solid var(--rule)}
+.b-lg img{display:block;width:auto;max-width:100%;filter:invert(1);opacity:.72;transition:opacity .3s}
+.b-lg li:hover img{opacity:1}
+@media (max-width:900px){.b-lg{grid-template-columns:repeat(4,1fr)}.b-lg li{height:96px}.b-lg li:nth-child(5){border-left:0}.b-lg li:nth-child(n+5){border-top:1px solid var(--rule)}}
 
 .b-foot{margin:clamp(72px,8vw,120px) 0 0;padding:clamp(40px,5vw,56px) 0 48px;display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
 .b-foot h2{margin:0;font-weight:800;font-size:clamp(84px,12vw,170px);line-height:.85;letter-spacing:-.05em}
@@ -199,6 +195,8 @@ img{max-width:100%}
 <div><b>28</b><span>squads supported at Flutter UKI</span></div>
 </div>
 
+<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:24px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:27px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:22px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:19px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:26px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:35px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:27px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:45px"></li></ul></section>
+
 <div class="b-label" id="work"><h2>Selected work</h2><span class="mono">01–03</span></div>
 <div class="b-proj">
 <a class="b-card wide sky" href="/sky-bet">
@@ -256,7 +254,7 @@ img{max-width:100%}
 <p class="mono b-team-cap">Two design teams meeting before the Sky Bet move · painting with the heads of product · our team as ducks in Dublin (I’m in the bowler hat)</p>
 </section>
 
-<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul><li><span class="lg"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="height:30px"></span><span class="mono">Flutter Entertainment</span></li><li><span class="lg"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="height:34px"></span><span class="mono">Sky Bet</span></li><li><span class="lg"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="height:28px"></span><span class="mono">Paddy Power Betfair</span></li><li><span class="lg"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="height:24px"></span><span class="mono">Wunderman</span></li><li><span class="lg"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="height:32px"></span><span class="mono">R/GA</span></li><li><span class="lg"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="height:44px"></span><span class="mono">Sapient</span></li><li><span class="lg"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="height:34px"></span><span class="mono">Profero</span></li><li><span class="lg"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="height:56px"></span><span class="mono">SixandCo / FullSix</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="height:30px"></span><span class="mono">Flutter Entertainment</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="height:34px"></span><span class="mono">Sky Bet</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="height:28px"></span><span class="mono">Paddy Power Betfair</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="height:24px"></span><span class="mono">Wunderman</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="height:32px"></span><span class="mono">R/GA</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="height:44px"></span><span class="mono">Sapient</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="height:34px"></span><span class="mono">Profero</span></li><li aria-hidden="true"><span class="lg"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="height:56px"></span><span class="mono">SixandCo / FullSix</span></li></ul></div></section>
+
 
 <footer id="contact" class="b-foot"><h2>Let’s<br><span>talk.</span></h2>
 <nav class="b-links" aria-label="Contact"><a class="lz" href="mailto:rileypap03@gmail.com">Email <span aria-hidden="true">↗</span></a><a class="lz" href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a><a class="lz" href="/assets/Paul-Riley-CV.pdf" download="Paul-Riley-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></nav>
