@@ -1,0 +1,111 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+:root{--bg:#0E0F0D;--ink:#F2EFE6;--soft:#9C988C;--rule:#2A2B27;--accent:#FF6A2B;--deep:#171815}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:18px;line-height:1.45}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.02em}
+.b-wrap{width:1440px;margin:0 auto;padding:0 48px}
+.b-top{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.b-name{font-weight:800;font-size:22px;display:flex;align-items:center;gap:10px}
+.b-name i{display:block;width:14px;height:14px;background:var(--accent)}
+.b-nav{display:flex;gap:6px}
+.b-nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 16px;border-radius:999px;border:1px solid var(--rule)}
+.b-nav a.cv{background:var(--accent);border-color:var(--accent);color:#120A05;font-weight:600}
+.b-hero{padding:80px 0 56px}
+.b-hero h1{margin:0;font-weight:800;font-size:150px;line-height:.88;letter-spacing:-.045em}
+.b-hero h1 span{color:var(--accent)}
+.b-sub{display:flex;justify-content:space-between;align-items:end;margin-top:56px;gap:48px}
+.b-sub p{margin:0;max-width:560px;font-size:22px;color:var(--soft)}
+.b-sub p b{color:var(--ink);font-weight:600}
+.b-nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.b-nums div{padding:32px 24px 32px 0}
+.b-nums div+div{padding-left:24px;border-left:1px solid var(--rule)}
+.b-nums b{display:block;font-weight:800;font-size:72px;line-height:1;letter-spacing:-.03em}
+.b-nums b em{font-style:normal;color:var(--accent)}
+.b-nums span{display:block;margin-top:10px;color:var(--soft);font-size:15px}
+.b-proj{margin-top:96px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.b-card{position:relative;border-radius:28px;overflow:hidden;background:var(--deep);min-height:640px;display:flex;flex-direction:column;justify-content:space-between}
+.b-card.wide{grid-column:1/3;min-height:700px;flex-direction:row}
+.b-card .txt{padding:40px;display:flex;flex-direction:column;gap:16px;max-width:520px;position:relative;z-index:2}
+.b-card h2{margin:0;font-weight:800;font-size:56px;line-height:.98;letter-spacing:-.03em}
+.b-card p{margin:0;color:var(--soft)}
+.b-card .go{display:inline-flex;align-items:center;gap:10px;margin-top:8px;color:var(--ink);font-weight:600;text-decoration:none}
+.b-card .go i{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--accent);align-items:center;justify-content:center;font-style:normal;color:#120A05}
+.b-stage{position:relative;flex:1;display:flex;justify-content:center;align-items:flex-start;gap:28px;padding-top:56px}
+.b-ph{width:230px;border:6px solid #000;border-radius:34px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);flex:none}
+.b-ph img{display:block;width:100%}
+.b-ph.r{transform:rotate(6deg);margin-top:60px}
+.b-ph.l{transform:rotate(-5deg)}
+.sky{background:#0F2A8C}
+.bf{background:#2B2410}
+.fl{background:var(--accent);color:#120A05}
+.fl p,.fl .go{color:#120A05}
+.fl .go i{background:#120A05;color:var(--accent)}
+.b-grid9{display:grid;grid-template-columns:repeat(3,88px);gap:14px;margin:auto}
+.b-grid9 i{display:block;aspect-ratio:1;background:rgba(18,10,5,.25)}
+.b-grid9 i.n{background:#120A05}
+.b-made{margin-top:140px}
+.b-made h3{margin:0 0 32px;font-weight:800;font-size:88px;line-height:.9;letter-spacing:-.04em}
+.b-made .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.b-shot{border-radius:24px;overflow:hidden;background:var(--deep);padding:28px 28px 0}
+.b-shot img{display:block;width:100%;border-radius:12px 12px 0 0}
+.b-shot .cap{display:flex;justify-content:space-between;padding:20px 0 24px}
+.b-human{margin-top:140px;display:grid;grid-template-columns:5fr 7fr;gap:16px}
+.b-ph-slot{border-radius:24px;min-height:520px;background:repeating-linear-gradient(135deg,#1C1D1A 0 14px,#22231F 14px 28px);display:flex;align-items:flex-end;padding:24px;color:var(--soft)}
+.b-q{border-radius:24px;background:var(--ink);color:var(--bg);padding:48px;display:flex;flex-direction:column;justify-content:space-between}
+.b-q blockquote{margin:0;font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.02em}
+.b-q cite{font-style:normal}
+.b-foot{margin:140px 0 0;padding:56px 0 48px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:end}
+.b-foot h2{margin:0;font-weight:800;font-size:150px;line-height:.85;letter-spacing:-.05em}
+.b-foot h2 span{color:var(--accent)}
+</style>
+</head><body>
+
+<div class="b-wrap">
+<header class="b-top"><div class="b-name"><i></i>Paul Riley</div><nav class="b-nav"><a href="#">Work</a><a href="#">How I lead</a><a href="#">Let’s talk</a><a class="cv" href="#">CV</a></nav></header>
+
+<section class="b-hero">
+<h1>I build design teams and lead products through <span>big change.</span></h1>
+<div class="b-sub"><p><b>Design leader.</b> Twenty years in digital product, eleven leading design at Betfair, Sky Bet and Flutter.</p><span class="mono">Based in the UK</span></div>
+</section>
+
+<div class="b-nums">
+<div><b>9<em>m</em></b><span>customers moved onto a shared platform</span></div>
+<div><b>94<em>%</em></b><span>team retention over five years</span></div>
+<div><b>6→18</b><span>designers in the Betfair sports team</span></div>
+<div><b>28</b><span>squads supported at Flutter UKI</span></div>
+</div>
+
+<div class="b-proj">
+<article class="b-card wide sky">
+<div class="txt"><span class="mono">01 · Sky Bet · 2024–25</span><h2>Moving 9 million customers onto a shared platform</h2><p>Two teams, one deadline, and a second phase that brought Sky Bet’s character back.</p><a class="go" href="#"><i>→</i>View project</a></div>
+<div class="b-stage"><div class="b-ph l"><img src="/assets/ba627de7c7e7482156e8f07e4e986de2.jpg" alt="Sky Bet home today"></div><div class="b-ph r"><img src="/assets/b53602d3d28b8a37ce35f3e8d3a32973.jpg" alt="Sky Bet football today"></div></div>
+</article>
+<article class="b-card bf">
+<div class="txt"><span class="mono">02 · Betfair · 2018–23</span><h2>Transforming Betfair on a new platform</h2><a class="go" href="#"><i>→</i>View project</a></div>
+<div class="b-stage" style="padding-top:8px"><div class="b-ph l" style="width:200px"><img src="/assets/1ee3ecc0cc5a16dc02942aa3634402df.jpg" alt="Betfair home today"></div><div class="b-ph r" style="width:200px"><img src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
+</article>
+<article class="b-card fl">
+<div class="txt"><span class="mono">03 · Flutter UKI · 2025–now</span><h2>Growing a team to support 28 squads</h2><a class="go" href="#"><i>→</i>View project</a></div>
+<div class="b-stage" style="align-items:center;padding:0 0 40px"><div class="b-grid9"><i></i><i></i><i></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div></div>
+</article>
+</div>
+
+<section class="b-made">
+<h3>Still making things.</h3>
+<div class="row">
+<div class="b-shot"><img src="/assets/963452ed986e63d5287e19d37b02930e.jpg" alt="Leadership Loop dashboard"><div class="cap"><b>Leadership Loop</b><span class="mono">Coaching tool · built with AI</span></div></div>
+<div class="b-shot"><img src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends dashboard (sample data)"><div class="cap"><b>BetsFriends</b><span class="mono">World Cup bet tracker · built with AI</span></div></div>
+</div>
+</section>
+
+<section class="b-human">
+<div class="b-ph-slot">Workshop or team photo, to come</div>
+<div class="b-q"><blockquote>“He gives you real autonomy… but he’s always there to sharpen the thinking.”</blockquote><cite class="mono">Diogo Fernandes · Product Designer</cite></div>
+</section>
+
+<footer class="b-foot"><h2>Let’s<br><span>talk.</span></h2><span class="mono">Email · LinkedIn · Download CV</span></footer>
+</div>
+
+</body></html>
