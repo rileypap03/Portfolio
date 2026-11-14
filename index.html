@@ -141,14 +141,13 @@ img{max-width:100%}
 
 .b-where{margin-top:clamp(56px,6vw,88px)}
 .b-where>.mono{display:block;margin-bottom:16px;color:var(--soft)}
-.b-mq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.b-lg{display:flex;width:max-content;margin:0;padding:0;list-style:none;animation:mq 45s linear infinite}
+.b-mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.b-lg{display:flex;gap:16px;width:max-content;margin:0;padding:0;list-style:none;animation:mq 50s linear infinite}
 .b-mq:hover .b-lg{animation-play-state:paused}
-.b-lg li{flex:none;width:clamp(180px,18vw,260px);height:156px;display:flex;align-items:center;justify-content:center;padding:0 22px;border-right:1px solid var(--rule)}
-.b-lg img{display:block;width:auto;max-width:100%;filter:invert(1);opacity:.72;transition:opacity .3s}
-.b-lg li:hover img{opacity:1}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (max-width:900px){.b-lg li{height:112px;width:170px}}
+.b-lg li{flex:none;width:clamp(180px,17vw,240px);height:140px;display:flex;align-items:center;justify-content:center;padding:0 24px;border-radius:12px;background:rgba(255,255,255,.022);border:1px solid #1C1D1A}
+.b-lg img{display:block;width:auto;max-width:100%;filter:invert(1);opacity:.7}
+@keyframes mq{to{transform:translateX(calc(-50% - 8px))}}
+@media (max-width:900px){.b-lg li{height:104px;width:160px}}
 @media (prefers-reduced-motion:reduce){.b-lg{animation:none}}
 
 .b-foot{margin:clamp(72px,8vw,120px) 0 0;padding:clamp(40px,5vw,56px) 0 48px;display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
@@ -261,8 +260,7 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .mk-row figcaption .mono{color:var(--soft);font-size:12px}
 @media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
 /* hero phone: real 3D turn */
-.sky .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*18deg))!important}
-.bf .b-ph.l{--t:1;transform-origin:50% 100%;transform:translate3d(0,calc(var(--py,0px) + var(--t)*40px),0) rotateX(calc(var(--t)*16deg)) scale(calc(1 - var(--t)*.04))!important}
+.sky .b-ph.l,.bf .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*18deg))!important}
 .sky .b-ph.l::before,.bf .b-ph.l::before{display:none}
 .sky .b-stage,.bf .b-stage{perspective:1800px!important;perspective-origin:50% 50%!important}
 
@@ -281,6 +279,17 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .gm-scr.b{left:auto;right:-6%;top:130px;filter:brightness(.85)}
 .gm-scr img{display:block;width:100%;border-radius:7px;image-rendering:pixelated}
 @media (max-width:900px){.ph3,.gm-stage{height:320px}.ph3 .b-ph{--w:38vw}.ph3 .b-ph.r{--w:33vw}.ph3 .b-ph.r2{--w:29vw}.b-made .b-card{min-height:0}}
+
+/* phones always bleed off the bottom */
+html body .b-stage.ph2,html body .b-stage.ph3{align-items:flex-end!important;padding-top:0!important}
+html body .b-stage.ph2 .b-ph.l,html body .b-stage.ph3 .b-ph.l{margin-bottom:calc(var(--w)*-.6)!important;margin-top:0!important}
+html body .b-stage.ph2 .b-ph.r,html body .b-stage.ph3 .b-ph.r{margin-bottom:calc(var(--w)*-.95)!important;margin-top:0!important}
+html body .b-card.wide .b-stage.ph2 .b-ph.l{--w:clamp(250px,25vw,330px);margin-bottom:calc(var(--w)*-.42)!important}
+html body .b-card.wide .b-stage.ph2 .b-ph.r{--w:clamp(220px,22vw,290px);margin-bottom:calc(var(--w)*-.8)!important}
+html body .bf .b-stage.ph2 .b-ph.l{margin-bottom:calc(var(--w)*-.5)!important}
+@media (max-width:900px){html body .b-card.wide .b-stage.ph2 .b-ph.l{--w:min(52vw,250px)}html body .b-card.wide .b-stage.ph2 .b-ph.r{--w:min(44vw,210px)}}
+@media (min-width:901px) and (max-width:1180px){html body .b-card.wide>.txt{max-width:46%!important;flex:0 0 46%}html body .b-card.wide .b-stage.ph2{min-width:0;justify-content:center!important;padding-right:24px!important}html body .b-card.wide .b-stage.ph2 .b-ph.l{--w:clamp(200px,21vw,250px)}html body .b-card.wide .b-stage.ph2 .b-ph.r{--w:clamp(176px,18vw,215px)}}
+html body .b-stage.ph3 .b-ph.r2{margin-bottom:calc(var(--w)*-1.25)!important;margin-top:0!important}
 </style>
 
 </head>
@@ -311,11 +320,11 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 <div class="b-proj">
 <a class="b-card wide sky" href="/sky-bet">
 <div class="txt"><span class="mono">01 · Sky Bet · 2024–25</span><h3>Moving 9 million customers onto a shared platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
-<div class="b-stage ph2"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/skybet-home-poster-v2.jpg" aria-label="Scrolling the Sky Bet home screen today"><source src="/assets/skybet-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/b53602d3d28b8a37ce35f3e8d3a32973.jpg" alt="Sky Bet football today"></div></div>
+<div class="b-stage ph2"><div class="b-ph l"><video muted loop playsinline preload="metadata" poster="/assets/skybet-home-poster-v2.jpg" aria-label="Scrolling the Sky Bet home screen today"><source src="/assets/skybet-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/b53602d3d28b8a37ce35f3e8d3a32973.jpg" alt="Sky Bet football today"></div></div>
 </a>
 <a class="b-card bf" href="/betfair">
 <div class="txt"><span class="mono">02 · Betfair · 2018–23</span><h3>Transforming Betfair on a new platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
-<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/betfair-home-poster-v2.jpg" aria-label="Scrolling the Betfair home screen today"><source src="/assets/betfair-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
+<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><video muted loop playsinline preload="metadata" poster="/assets/betfair-home-poster-v2.jpg" aria-label="Scrolling the Betfair home screen today"><source src="/assets/betfair-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
 </a>
 <a class="b-card fl" href="/flutter-uki">
 <div class="txt"><span class="mono">03 · Flutter UKI · 2025–now</span><h3>Growing a team to support 28 squads</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
@@ -390,6 +399,9 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 class Component extends DCLogic {
   renderVals() { return {}; }
   componentDidMount() {
+    if (!window.__pbVid && typeof IntersectionObserver !== 'undefined') { window.__pbVid = true;
+      const vo = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting) { if (!v.__started) { v.__started = true; try { v.currentTime = 0; } catch (x) {} } const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); } else { v.pause(); } }), { threshold: 0.6 });
+      document.querySelectorAll('.b-ph video').forEach((v) => vo.observe(v)); }
     if (!window.__mnav) { window.__mnav = true; document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('.mnav a')) { const t = document.getElementById('mnav'); if (t) t.checked = false; } }); }
     if (!window.__pbPar && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { window.__pbPar = true;
       let tk = false; const upd = () => { tk = false; const vh = innerHeight;
