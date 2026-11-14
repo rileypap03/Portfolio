@@ -245,6 +245,25 @@ html body .next-cs:hover svg{transform:translateX(8px)}
 html body .next-cs [data-reveal]{transition:opacity .3s}
 html body .next-cs:hover [data-reveal]{opacity:.82}
 @media (prefers-reduced-motion:reduce){.mnav,.mnav *{transition:none!important}::view-transition-old(root),::view-transition-new(root){animation:none}}
+
+/* loop card + making */
+.lp{background-color:#171815;background-image:var(--grain),radial-gradient(60% 80% at 80% 30%,rgba(255,255,255,.07),transparent 70%);background-size:180px 180px,auto}
+.lp-stage{align-items:center!important;justify-content:flex-end!important;padding:48px 0 48px 24px!important}
+.lp-tab{width:min(100%,640px);margin-right:-40px;padding:10px;border-radius:18px;background:linear-gradient(150deg,#4a4c50 0%,#151618 22%,#0b0b0c 60%,#2b2c2f 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 50px 90px -30px rgba(0,0,0,.8)}
+.lp-tab img{display:block;width:100%;border-radius:10px}
+.mk{border-radius:12px;background:rgba(255,255,255,.022);border:1px solid #1C1D1A;padding:clamp(20px,3vw,32px)}
+.mk-txt p{margin:0 0 24px;max-width:640px;color:var(--soft);font-size:18px}
+.mk-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;align-items:start}
+.mk-row figure{margin:0}
+.mk-row img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px;border:1px solid #1C1D1A}
+.mk-row .mk-wide img{aspect-ratio:auto;height:100%}
+.mk-row figcaption{display:flex;justify-content:space-between;gap:10px;padding-top:12px;font-size:15px}
+.mk-row figcaption .mono{color:var(--soft);font-size:12px}
+@media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
+/* hero phone: real 3D turn */
+.sky .b-ph.l{--t:0;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*30deg)) rotateX(calc(var(--t)*-6deg))!important;filter:drop-shadow(calc(var(--t)*-10px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-22px) 18px 30px rgba(0,0,0,.45))}
+.sky .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(calc(110deg + var(--t)*40deg),transparent 35%,rgba(255,255,255,calc(.10 + var(--t)*.08)) 50%,transparent 65%);mix-blend-mode:screen}
+.sky .b-stage{perspective:900px!important}
 </style>
 
 </head>
@@ -271,7 +290,7 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 </div>
 
 
-<div class="b-label" id="work"><h2>Selected work</h2><span class="mono">01–03</span></div>
+<div class="b-label" id="work"><h2>Selected work</h2><span class="mono">01–04</span></div>
 <div class="b-proj">
 <a class="b-card wide sky" href="/sky-bet">
 <div class="txt"><span class="mono">01 · Sky Bet · 2024–25</span><h3>Moving 9 million customers onto a shared platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
@@ -285,13 +304,22 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 <div class="txt"><span class="mono">03 · Flutter UKI · 2025–now</span><h3>Growing a team to support 28 squads</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
 <div class="b-stage" style="align-items:center;padding:0 0 40px" aria-hidden="true"><div class="b-grid9"><i></i><i></i><i></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div></div>
 </a>
+<a class="b-card wide lp" href="/leadership-loop">
+<div class="txt"><span class="mono">04 · Side project · 2026</span><h3>Leadership Loop: remembering what matters between 1:1s</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
+<div class="b-stage lp-stage"><div class="lp-tab"><img data-pix src="/assets/963452ed986e63d5287e19d37b02930e.jpg" alt="Leadership Loop: a person’s page with the conversation history and promises"></div></div>
+</a>
 </div>
 
+
 <section class="b-made">
-<div class="b-label"><h2>Still making things.</h2><span class="mono">Built with AI</span></div>
-<div class="row">
-<a class="b-shot" href="/leadership-loop"><img data-pix src="/assets/963452ed986e63d5287e19d37b02930e.jpg" alt="Leadership Loop dashboard"><div class="cap"><b class="lz lz-t">Leadership Loop →</b><span class="mono">A coaching tool for my leads</span></div></a>
-<div class="b-shot"><img data-pix src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends dashboard (sample data)"><div class="cap"><b>BetsFriends</b><span class="mono">A World Cup bet tracker for friends</span></div></div>
+<div class="b-label"><h2>Still making things.</h2><span class="mono">Built with AI, outside work</span></div>
+<div class="mk">
+<div class="mk-txt"><p>Small things I build with AI for the people around me: a bet tracker for my friends during the World Cup, and a platform game I made with my son.</p></div>
+<div class="mk-row">
+<figure class="mk-wide"><img data-pix src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends: the group’s shared profit and loss over the World Cup (sample data)"><figcaption><b>BetsFriends</b><span class="mono">World Cup bet tracker</span></figcaption></figure>
+<figure><img data-pix src="/assets/527d9329f76c75f3dde7aed37a04263b.png" alt="A daytime level from the platform game my son and I built"><figcaption><b>The game</b><span class="mono">Built with my son</span></figcaption></figure>
+<figure><img data-pix src="/assets/0d95ebc4b4ab0be1d99645ff35127897.png" alt="A Nether level from the same game, with lava to get past"><figcaption><b>Level two</b><span class="mono">Lava and all</span></figcaption></figure>
+</div>
 </div>
 </section>
 
@@ -349,7 +377,7 @@ class Component extends DCLogic {
         document.querySelectorAll('.b-stage.ph2').forEach((st) => { const r = st.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
           const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh)); const k = innerWidth < 900 ? 0.45 : 1;
           const l = st.querySelector('.b-ph.l'), rr = st.querySelector('.b-ph.r');
-          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); l.style.setProperty('--ry', (p * 24).toFixed(2) + 'deg'); l.style.setProperty('--rx', (p * 8).toFixed(2) + 'deg'); } if (rr) { rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); rr.style.setProperty('--ry', (p * 32 - 6).toFixed(2) + 'deg'); rr.style.setProperty('--rx', (p * 8).toFixed(2) + 'deg'); } }); };
+          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (st.closest('.sky')) l.style.setProperty('--t', Math.max(-1, Math.min(1, p * 2.2)).toFixed(3)); } if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
       addEventListener('scroll', () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true }); addEventListener('resize', upd); upd(); setTimeout(upd, 500); }
     if (window.__pbPix || typeof IntersectionObserver === 'undefined') return;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
