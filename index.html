@@ -176,6 +176,7 @@ img{max-width:100%}
   .b-team img{aspect-ratio:4/3;height:auto}
   .b-team img.tall{grid-row:auto;grid-column:1/3;aspect-ratio:4/3}
   .b-team img:first-child{grid-column:1/3}
+  .b-team img:last-child{grid-column:1/3}
   .b-links{width:100%}
 }
 @media (max-width:480px){
@@ -204,6 +205,21 @@ html:has(.mnav-t:checked){overflow:hidden}
 .mnav-f i{font-style:normal;width:36px;height:36px;border-radius:50%;background:#FF6A2B;color:#120A05;display:inline-flex;align-items:center;justify-content:center;flex:none}
 @media (max-width:900px){.b-menu{display:inline-flex}.b-nav a.lz:not(.cv){display:none!important}}
 @media (min-width:901px){.mnav{display:none}}
+
+/* polish v1 */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+html body .b-top .b-nav{align-items:center}
+html body .b-top .b-nav a,html body .b-top .b-menu{display:inline-flex;align-items:center;justify-content:center;height:40px!important;min-height:0!important;padding:0 16px!important;box-sizing:border-box;line-height:1;margin:0;border-radius:999px;font-size:15px!important;width:auto!important}
+@media (max-width:900px){html body .b-top .b-nav a.lz:not(.cv){display:none!important}}
+@media (max-width:480px){html body .b-top .b-nav a,html body .b-top .b-menu{height:38px!important;padding:0 14px!important;font-size:14px!important}}
+.mnav{transition:opacity .5s cubic-bezier(.2,.7,.2,1),visibility .5s,backdrop-filter .5s!important;backdrop-filter:blur(0)!important;-webkit-backdrop-filter:blur(0)!important}
+.mnav-t:checked~.mnav{backdrop-filter:blur(28px) saturate(1.2)!important;-webkit-backdrop-filter:blur(28px) saturate(1.2)!important}
+.mnav-l a,.mnav-c,.mnav-f{opacity:0;transform:translateY(18px);transition:opacity .45s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.mnav-t:checked~.mnav .mnav-l a,.mnav-t:checked~.mnav .mnav-c,.mnav-t:checked~.mnav .mnav-f{opacity:1;transform:none}
+.mnav-t:checked~.mnav .mnav-l a:nth-child(1){transition-delay:.08s}.mnav-t:checked~.mnav .mnav-l a:nth-child(2){transition-delay:.13s}.mnav-t:checked~.mnav .mnav-l a:nth-child(3){transition-delay:.18s}.mnav-t:checked~.mnav .mnav-l a:nth-child(4){transition-delay:.23s}.mnav-t:checked~.mnav .mnav-c{transition-delay:.3s}.mnav-t:checked~.mnav .mnav-f{transition-delay:.36s}
+.b-menu span{transition:opacity .2s}
+@media (prefers-reduced-motion:reduce){.mnav,.mnav *{transition:none!important}::view-transition-old(root),::view-transition-new(root){animation:none}}
 </style>
 
 </head>
