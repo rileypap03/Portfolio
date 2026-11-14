@@ -261,9 +261,9 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .mk-row figcaption .mono{color:var(--soft);font-size:12px}
 @media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
 /* hero phone: real 3D turn */
-.sky .b-ph.l,.bf .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-28deg)) rotateX(calc(var(--t)*4deg))!important;filter:drop-shadow(calc(var(--t)*-9px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-18px) 20px 30px rgba(0,0,0,.4))}
-.sky .b-ph.l::before,.bf .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 75%);opacity:var(--t);mix-blend-mode:screen}
-.sky .b-stage,.bf .b-stage{perspective:900px!important}
+.sky .b-ph.l,.bf .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-16deg))!important}
+.sky .b-ph.l::before,.bf .b-ph.l::before{display:none}
+.sky .b-stage,.bf .b-stage{perspective:2000px!important}
 
 /* making tiles */
 .bfr{background-color:#10251A;background-image:var(--grain),radial-gradient(55% 70% at 70% 35%,rgba(40,200,120,.28),transparent 70%),radial-gradient(60% 80% at 0% 100%,#06120c,transparent 70%);background-size:180px 180px,auto,auto;--glow:rgba(40,200,120,.3)}

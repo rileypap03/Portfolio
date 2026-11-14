@@ -417,6 +417,22 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 html body .snp-fr{border-radius:16%/7.4%!important}
 html body .snp-fr img{border-radius:13%/6.1%!important}
 @media (max-width:700px){html body .snp-ph{width:40vw!important}html body .snp-screens{height:auto!important;max-height:none!important;padding:40px 16px 0!important;gap:16px!important}html body .snp-ph figcaption{font-size:12px!important;text-align:center;min-height:2.8em}html body .snp-screens{overflow:hidden}html body .snp-ph .snp-fr{max-height:64vw;overflow:hidden!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important}}
+
+/* results as cards */
+html body .pr-res{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important;margin:8px 0 24px!important;padding:0!important;border:0!important}
+html body .pr-res>div{display:flex!important;flex-direction:column;gap:20px;padding:20px!important;margin:0!important;border-radius:12px;background:rgba(255,255,255,.022)!important;border:1px solid #1C1D1A!important}
+html body .pr-res>div::before,html body .pr-res>div::after{display:none!important}
+html body .pr-res dt{margin:0!important;font-family:'Bricolage Grotesque',system-ui,sans-serif!important;font-weight:600!important;font-size:clamp(32px,3.2vw,44px)!important;line-height:1!important;letter-spacing:-.035em!important;color:#F2EFE6!important}
+html body .pr-res dd{margin:auto 0 0!important;font-size:15px!important;line-height:1.4!important;color:#A29E92!important}
+@media (max-width:520px){html body .pr-res{grid-template-columns:1fr 1fr}}
+/* mobile stat cards align with page gutter */
+@media (max-width:700px){html body .sum[aria-label="Summary"]>div:first-child{margin-left:0!important}html body .sum[aria-label="Summary"]>div:last-child{margin-right:16px!important}html body .sum[aria-label="Summary"]{padding-left:20px!important;padding-right:0!important}}
+/* flutter at a glance photos */
+.snp-ph2{display:grid;grid-template-columns:3fr 2fr;gap:12px;width:100%;max-width:960px;align-self:stretch;padding:0 0 32px}
+.snp-ph2 img{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px}
+.snp-ph2 figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.snp-ph2 figcaption{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#A29E92}
+@media (max-width:700px){.snp-ph2{grid-template-columns:1fr}}
 </style>
 
 </head>
