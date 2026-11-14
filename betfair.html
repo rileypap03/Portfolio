@@ -670,6 +670,52 @@ html body .pr-res dd{margin:auto 0 0!important;font-size:15px!important;line-hei
 
 html body .sum[aria-label="Summary"]>div>b,html body .pr-res dt{color:#FF6A2B!important}
 html body .sum[aria-label="Summary"]>div>b small{color:inherit!important;opacity:.85}
+
+/* unified fan v2 */
+html body .fanw{--fw:clamp(170px,17vw,240px)}
+html body .fan{padding:44px 0 8px!important;overflow:visible!important}
+html body .fan .fp{--fw:inherit;width:var(--fw)!important;flex:none}
+html body .fan .fp.b{--fw:inherit}
+html body .fan .fp.a{transform:translateY(7%) rotate(-7deg) scale(.92)!important;margin-right:calc(var(--fw)*-.2);filter:brightness(.9)!important}
+html body .fan .fp.c{transform:translateY(7%) rotate(7deg) scale(.92)!important;margin-left:calc(var(--fw)*-.2);filter:brightness(.9)!important}
+html body .fanw{overflow:hidden;padding-bottom:8px}
+html body .fan-cap{display:grid!important;grid-template-columns:repeat(3,calc(var(--fw)*.8));justify-content:center;gap:0!important;padding:28px 0 0!important;text-align:center}
+html body .fan-cap span{display:flex;align-items:center;justify-content:center;gap:0}
+html body .jx-step .fan{--fw:118px;padding:28px 0 0!important;height:auto!important}
+html body .jx-step .fan .fp.a,html body .jx-step .fan .fp.c{transform:translateY(7%) rotate(var(--r)) scale(.92)!important}
+html body .jx-step .fan .fp.a{--r:-7deg}html body .jx-step .fan .fp.c{--r:7deg}
+html body .jx-step{overflow:hidden}
+@media (max-width:700px){html body .fanw{--fw:30vw}html body .fan-cap{font-size:11px!important}}
+/* pitch films: back phones more visible */
+html body .pv-card[data-pos="1"]{transform:translate(78%,7%) rotate(7deg) scale(.9)!important}
+html body .pv-card[data-pos="2"]{transform:translate(-78%,7%) rotate(-7deg) scale(.9)!important}
+html body .pv-card[data-pos="1"],html body .pv-card[data-pos="2"]{filter:brightness(.9)}
+html body .pv{overflow:hidden;padding-bottom:24px}
+@media (max-width:640px){html body .pv-deck{width:min(200px,46vw)!important;height:auto!important;aspect-ratio:232/540}html body .pv-card[data-pos="1"]{transform:translate(62%,7%) rotate(7deg) scale(.88)!important}html body .pv-card[data-pos="2"]{transform:translate(-62%,7%) rotate(-7deg) scale(.88)!important}}
+/* at a glance points as cards */
+html body .snp-pts{background:transparent!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px!important;border:0!important;padding:40px 20px 8px!important;max-width:1240px;margin:0 auto!important;box-sizing:border-box}
+html body .snp-pt{border:1px solid #1C1D1A!important;border-radius:12px!important;background:rgba(255,255,255,.022)!important;padding:20px!important;margin:0!important}
+html body .snp-pt::before,html body .snp-pt::after{display:none!important}
+html body .snp-pt p{font-size:16px!important;line-height:1.45!important;color:#D9D5CB!important}
+@media (max-width:900px){html body .snp-pts{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){html body .snp-pts{grid-template-columns:1fr}}
+html body .snp{border-bottom:0!important}
+
+html body section.her{background:transparent!important;box-shadow:none!important}
+html body .fan-cap span:not([style])::before{display:none!important}
+@media (max-width:700px){html body .fan-cap span::before{display:none!important}html body .fan-cap{line-height:1.35}}
+/* controls: match site */
+html body .pv-btn{border-radius:999px!important;border:1px solid #3A3B36!important;color:#F2EFE6!important;transition:background-color .3s,border-color .3s,color .3s!important}
+html body .pv-btn:hover{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
+html body .pv-btn[data-pv-act="open"]{background:#FF6A2B!important;border-color:#FF6A2B!important;color:#120A05!important;font-family:'Bricolage Grotesque',system-ui,sans-serif!important;font-weight:600!important;font-size:14px!important;padding:0 18px!important}
+html body .pv-btn[data-pv-act="open"]:hover{background:#F2EFE6!important;border-color:#F2EFE6!important}
+html body .pv-dot{border-radius:50%}
+html body .pv-dot[data-on="1"]{background:#FF6A2B!important}
+html body .pv-ctrl{justify-content:center;margin-top:16px}
+html body .pv p{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-weight:400!important;text-transform:none!important;letter-spacing:.02em!important;color:#A29E92}
+html body .pv p span[aria-hidden]{display:none!important}
+html body .her>p[id]{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-weight:400!important;text-transform:none!important;letter-spacing:.02em!important;color:#A29E92!important}
+html body .her>p[id] span[aria-hidden]{display:none!important}
 </style>
 
 </head>
@@ -697,7 +743,7 @@ html body .sum[aria-label="Summary"]>div>b small{color:inherit!important;opacity
 
 <section class="snp" aria-labelledby="snp-h">
 <h2 id="snp-h" class="snp-lab">At a glance</h2>
-<div class="snp-screens" style="height:auto;background:transparent;border:0;display:block;padding:0"><div class="fan"><div class="fp a"><img data-pix src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app race card" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/23dd02657fad85c4266d3932719238ec.jpg" alt="Rebuilt Betfair app home" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/1ee3ecc0cc5a16dc02942aa3634402df.jpg" alt="Betfair app home today" loading="lazy"></div></div><div class="fan-cap"><span style="--d:#8A867B">Betfair, 2020</span><span style="--d:#F2B92C">Rebuilt, 2023</span><span style="--d:#FF6A2B">Betfair today</span></div></div>
+<div class="snp-screens fanw" style="height:auto;background:transparent;border:0;display:block;padding:0"><div class="fan"><div class="fp a"><img data-pix src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app race card" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/23dd02657fad85c4266d3932719238ec.jpg" alt="Rebuilt Betfair app home" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/1ee3ecc0cc5a16dc02942aa3634402df.jpg" alt="Betfair app home today" loading="lazy"></div></div><div class="fan-cap"><span style="--d:#8A867B">Betfair, 2020</span><span style="--d:#F2B92C">Rebuilt, 2023</span><span style="--d:#FF6A2B">Betfair today</span></div></div>
 <div class="snp-pts"><div class="snp-pt"><h3>The challenge</h3><p>Rebuild an app whose platform could no longer take new features.</p></div><div class="snp-pt"><h3>My role</h3><p>Led the sports design team, grew it from 6 to 18, and owned design direction for the programme.</p></div><div class="snp-pt"><h3>Key design decision</h3><p>Testing showed fans already had homes for scores and stats, so we kept what worked and made Betfair yellow a deliberate accent.</p></div><div class="snp-pt"><h3>The result</h3><p>The platform became Flutter’s global sportsbook platform, and 94% of the team stayed over five years.</p></div></div>
 <div class="snp-more"><button type="button" class="snp-btn" data-story-toggle aria-expanded="false"><span class="snp-bt">Read the full story</span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
 </section>
@@ -714,7 +760,7 @@ html body .sum[aria-label="Summary"]>div>b small{color:inherit!important;opacity
 
 <section data-story class="snap her" aria-labelledby="her-h">
 <p id="her-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Where we started · The live Betfair app, 2020</p>
-<ul class="her-row"><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app: a horse racing race card with a yellow header, race times and a Timeform tip" width="754" height="1340" loading="lazy"></div></div><figcaption>Sportsbook race card</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/a5fd96e5e2adee9bac1046afebee7d6f.jpg" alt="Old Betfair Exchange app: a horse racing market with back and lay prices in blue and pink" width="754" height="1340" loading="lazy"></div></div><figcaption>Exchange market</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/858521712e7630124390b3ff99ce56dc.jpg" alt="Old Betfair app Cash Out screen listing football bets with yellow cash out buttons" width="754" height="1340" loading="lazy"></div></div><figcaption>Cash out</figcaption></figure></li></ul>
+<div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app: a horse racing race card with a yellow header, race times and a Timeform tip" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/a5fd96e5e2adee9bac1046afebee7d6f.jpg" alt="Old Betfair Exchange app: a horse racing market with back and lay prices in blue and pink" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/858521712e7630124390b3ff99ce56dc.jpg" alt="Old Betfair app Cash Out screen listing football bets with yellow cash out buttons" loading="lazy"></div></div><div class="fan-cap"><span>Sportsbook race card</span><span>Exchange market</span><span>Cash out</span></div></div>
 </section>
 
 <section data-story class="snap prose" aria-labelledby="ap-h">
@@ -752,7 +798,7 @@ html body .sum[aria-label="Summary"]>div>b small{color:inherit!important;opacity
 
 <section data-story class="snap her" aria-labelledby="land-h">
 <p id="land-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Where we landed · The rebuilt Betfair app, 2023</p>
-<ul class="her-row"><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/23dd02657fad85c4266d3932719238ec.jpg" alt="Rebuilt Betfair app home: sport shortcuts, an odds boost banner, featured events and popular bet builders" width="647" height="1400" loading="lazy"></div></div><figcaption>Home</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/62c583a4fbf0f5f5270c087142cf04e4.jpg" alt="Rebuilt Betfair app: Today's Football list with match result prices" width="647" height="1400" loading="lazy"></div></div><figcaption>Today’s Football</figcaption></figure></li><li><figure><div class="her-ph"><div class="her-sc"><img src="/assets/56dfc8465fb4f2f21ab5e3247bd9d134.jpg" alt="Rebuilt Betfair app betslip showing a bet builder and singles" width="647" height="1400" loading="lazy"></div></div><figcaption>Betslip</figcaption></figure></li></ul>
+<div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/23dd02657fad85c4266d3932719238ec.jpg" alt="Rebuilt Betfair app home: sport shortcuts, an odds boost banner, featured events and popular bet builders" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/62c583a4fbf0f5f5270c087142cf04e4.jpg" alt="Rebuilt Betfair app: Today's Football list with match result prices" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/56dfc8465fb4f2f21ab5e3247bd9d134.jpg" alt="Rebuilt Betfair app betslip showing a bet builder and singles" loading="lazy"></div></div><div class="fan-cap"><span>Home</span><span>Today’s Football</span><span>Betslip</span></div></div>
 </section>
 
 <section data-story class="snap prose" aria-labelledby="lt-h">
