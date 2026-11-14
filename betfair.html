@@ -716,6 +716,21 @@ html body .pv p{font-family:'IBM Plex Mono',ui-monospace,monospace!important;fon
 html body .pv p span[aria-hidden]{display:none!important}
 html body .her>p[id]{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-weight:400!important;text-transform:none!important;letter-spacing:.02em!important;color:#A29E92!important}
 html body .her>p[id] span[aria-hidden]{display:none!important}
+
+/* round 3 */
+html body .fan .fp img{aspect-ratio:9/19.5;object-fit:cover;object-position:top;height:auto}
+html body .fan-cap span::before{display:none!important}
+html body .fan-cap{color:#A29E92}
+.jx-key{margin:14px 0 0!important;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px!important;line-height:1.6!important;color:#A29E92!important;max-width:640px}
+html body .jx-txt p.ins{--ins:#FF6A2B!important;box-shadow:inset 2px 0 0 #FF6A2B!important}
+html body .jx-track{grid-auto-columns:minmax(360px,440px)!important}
+html body .jx-step .fan{--fw:150px!important;padding-top:32px!important}
+@media (max-width:700px){html body .jx-track{grid-auto-columns:86vw!important}html body .jx-step .fan{--fw:31vw!important}}
+html body .pr-h{font-size:clamp(30px,3.2vw,44px)!important;line-height:1.05!important;margin-bottom:20px!important}
+html body .pr-lead{font-family:inherit!important;font-size:inherit!important;line-height:1.6!important;letter-spacing:0!important;font-weight:500!important;color:#F2EFE6!important;margin-bottom:12px!important}
+html body article figure img:not(.fp img):not(.jm-mini img),html body article .shot,html body article img.shot,html body .pr-media img,html body .pr-media video{border-radius:12px!important}
+html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:700px){html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:1fr 1fr}html body .pr-res:has(>div:nth-child(3):last-child)>div:last-child{grid-column:1/-1}}
 </style>
 
 </head>
@@ -760,7 +775,7 @@ html body .her>p[id] span[aria-hidden]{display:none!important}
 
 <section data-story class="snap her" aria-labelledby="her-h">
 <p id="her-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Where we started · The live Betfair app, 2020</p>
-<div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app: a horse racing race card with a yellow header, race times and a Timeform tip" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/a5fd96e5e2adee9bac1046afebee7d6f.jpg" alt="Old Betfair Exchange app: a horse racing market with back and lay prices in blue and pink" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/858521712e7630124390b3ff99ce56dc.jpg" alt="Old Betfair app Cash Out screen listing football bets with yellow cash out buttons" loading="lazy"></div></div><div class="fan-cap"><span>Sportsbook race card</span><span>Exchange market</span><span>Cash out</span></div></div>
+<div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/betfair-2020.jpg" alt="Old Betfair Sportsbook app: a horse racing race card with a yellow header, race times and a Timeform tip" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/bf2020-exchange.jpg" alt="Old Betfair Exchange app: a horse racing market with back and lay prices in blue and pink" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/bf2020-cashout.jpg" alt="Old Betfair app Cash Out screen listing football bets with yellow cash out buttons" loading="lazy"></div></div><div class="fan-cap"><span>Sportsbook race card</span><span>Exchange market</span><span>Cash out</span></div></div>
 </section>
 
 <section data-story class="snap prose" aria-labelledby="ap-h">

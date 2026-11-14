@@ -478,6 +478,21 @@ html body .pv p{font-family:'IBM Plex Mono',ui-monospace,monospace!important;fon
 html body .pv p span[aria-hidden]{display:none!important}
 html body .her>p[id]{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-weight:400!important;text-transform:none!important;letter-spacing:.02em!important;color:#A29E92!important}
 html body .her>p[id] span[aria-hidden]{display:none!important}
+
+/* round 3 */
+html body .fan .fp img{aspect-ratio:9/19.5;object-fit:cover;object-position:top;height:auto}
+html body .fan-cap span::before{display:none!important}
+html body .fan-cap{color:#A29E92}
+.jx-key{margin:14px 0 0!important;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px!important;line-height:1.6!important;color:#A29E92!important;max-width:640px}
+html body .jx-txt p.ins{--ins:#FF6A2B!important;box-shadow:inset 2px 0 0 #FF6A2B!important}
+html body .jx-track{grid-auto-columns:minmax(360px,440px)!important}
+html body .jx-step .fan{--fw:150px!important;padding-top:32px!important}
+@media (max-width:700px){html body .jx-track{grid-auto-columns:86vw!important}html body .jx-step .fan{--fw:31vw!important}}
+html body .pr-h{font-size:clamp(30px,3.2vw,44px)!important;line-height:1.05!important;margin-bottom:20px!important}
+html body .pr-lead{font-family:inherit!important;font-size:inherit!important;line-height:1.6!important;letter-spacing:0!important;font-weight:500!important;color:#F2EFE6!important;margin-bottom:12px!important}
+html body article figure img:not(.fp img):not(.jm-mini img),html body article .shot,html body article img.shot,html body .pr-media img,html body .pr-media video{border-radius:12px!important}
+html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:700px){html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:1fr 1fr}html body .pr-res:has(>div:nth-child(3):last-child)>div:last-child{grid-column:1/-1}}
 </style>
 
 </head>
