@@ -261,9 +261,9 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .mk-row figcaption .mono{color:var(--soft);font-size:12px}
 @media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
 /* hero phone: real 3D turn */
-.sky .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-28deg)) rotateX(calc(var(--t)*4deg))!important;filter:drop-shadow(calc(var(--t)*-9px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-18px) 20px 30px rgba(0,0,0,.4))}
-.sky .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 75%);opacity:var(--t);mix-blend-mode:screen}
-.sky .b-stage{perspective:900px!important}
+.sky .b-ph.l,.bf .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-28deg)) rotateX(calc(var(--t)*4deg))!important;filter:drop-shadow(calc(var(--t)*-9px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-18px) 20px 30px rgba(0,0,0,.4))}
+.sky .b-ph.l::before,.bf .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 75%);opacity:var(--t);mix-blend-mode:screen}
+.sky .b-stage,.bf .b-stage{perspective:900px!important}
 
 /* making tiles */
 .bfr{background-color:#10251A;background-image:var(--grain),radial-gradient(55% 70% at 70% 35%,rgba(40,200,120,.28),transparent 70%),radial-gradient(60% 80% at 0% 100%,#06120c,transparent 70%);background-size:180px 180px,auto,auto;--glow:rgba(40,200,120,.3)}
@@ -314,7 +314,7 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 </a>
 <a class="b-card bf" href="/betfair">
 <div class="txt"><span class="mono">02 · Betfair · 2018–23</span><h3>Transforming Betfair on a new platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
-<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><img data-pix src="/assets/1ee3ecc0cc5a16dc02942aa3634402df.jpg" alt="Betfair home today"></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
+<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/betfair-home-poster.jpg" aria-label="Scrolling the Betfair home screen today"><source src="/assets/betfair-home.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
 </a>
 <a class="b-card fl" href="/flutter-uki">
 <div class="txt"><span class="mono">03 · Flutter UKI · 2025–now</span><h3>Growing a team to support 28 squads</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
@@ -395,7 +395,7 @@ class Component extends DCLogic {
         document.querySelectorAll('.b-stage.ph2').forEach((st) => { const r = st.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
           const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh)); const k = innerWidth < 900 ? 0.45 : 1;
           const l = st.querySelector('.b-ph.l'), rr = st.querySelector('.b-ph.r');
-          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (st.closest('.sky')) l.style.setProperty('--t', Math.max(0, Math.min(1, p * 2.4)).toFixed(3)); } if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
+          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (st.closest('.sky,.bf')) l.style.setProperty('--t', Math.max(0, Math.min(1, p * 2.4)).toFixed(3)); } if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
       addEventListener('scroll', () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true }); addEventListener('resize', upd); upd(); setTimeout(upd, 500); }
     if (window.__pbPix || typeof IntersectionObserver === 'undefined') return;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
