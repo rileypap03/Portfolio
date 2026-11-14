@@ -261,9 +261,25 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .mk-row figcaption .mono{color:var(--soft);font-size:12px}
 @media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
 /* hero phone: real 3D turn */
-.sky .b-ph.l{--t:0;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*30deg)) rotateX(calc(var(--t)*-6deg))!important;filter:drop-shadow(calc(var(--t)*-10px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-22px) 18px 30px rgba(0,0,0,.45))}
-.sky .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(calc(110deg + var(--t)*40deg),transparent 35%,rgba(255,255,255,calc(.10 + var(--t)*.08)) 50%,transparent 65%);mix-blend-mode:screen}
+.sky .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-28deg)) rotateX(calc(var(--t)*4deg))!important;filter:drop-shadow(calc(var(--t)*-9px) 0 0 #2a2b2e) drop-shadow(calc(var(--t)*-18px) 20px 30px rgba(0,0,0,.4))}
+.sky .b-ph.l::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:4;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 75%);opacity:var(--t);mix-blend-mode:screen}
 .sky .b-stage{perspective:900px!important}
+
+/* making tiles */
+.bfr{background-color:#10251A;background-image:var(--grain),radial-gradient(55% 70% at 70% 35%,rgba(40,200,120,.28),transparent 70%),radial-gradient(60% 80% at 0% 100%,#06120c,transparent 70%);background-size:180px 180px,auto,auto;--glow:rgba(40,200,120,.3)}
+.gm{background-color:#1A1530;background-image:var(--grain),radial-gradient(55% 70% at 70% 35%,rgba(140,110,255,.3),transparent 70%),radial-gradient(60% 80% at 0% 100%,#0c0a18,transparent 70%);background-size:180px 180px,auto,auto}
+.b-made .b-card{min-height:600px}
+.b-made .b-card p{max-width:34ch}
+.ph3{padding-top:40px!important;height:380px;flex:none!important;min-height:0!important}
+.ph3 .b-ph{--w:clamp(160px,15vw,220px)}
+.ph3 .b-ph.l{z-index:3}
+.ph3 .b-ph.r{--w:clamp(148px,13.5vw,200px);margin-left:calc(var(--w)*-.25);margin-top:48px;z-index:2}
+.ph3 .b-ph.r2{--w:clamp(136px,12vw,180px);margin-left:calc(var(--w)*-.25);margin-top:88px;z-index:1;filter:brightness(.75)}
+.gm-stage{display:block!important;position:relative;height:380px;flex:none!important;min-height:0!important;padding:0!important}
+.gm-scr{position:absolute;width:72%;left:6%;top:24px;padding:8px;border-radius:14px;background:linear-gradient(150deg,#4a4c50 0%,#151618 22%,#0b0b0c 60%,#2b2c2f 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 40px 70px -30px rgba(0,0,0,.8)}
+.gm-scr.b{left:auto;right:-6%;top:130px;filter:brightness(.85)}
+.gm-scr img{display:block;width:100%;border-radius:7px;image-rendering:pixelated}
+@media (max-width:900px){.ph3,.gm-stage{height:320px}.ph3 .b-ph{--w:38vw}.ph3 .b-ph.r{--w:33vw}.ph3 .b-ph.r2{--w:29vw}.b-made .b-card{min-height:0}}
 </style>
 
 </head>
@@ -313,12 +329,14 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 
 <section class="b-made">
 <div class="b-label"><h2>Still making things.</h2><span class="mono">Built with AI, outside work</span></div>
-<div class="mk">
-<div class="mk-txt"><p>Small things I build with AI for the people around me: a bet tracker for my friends during the World Cup, and a platform game I made with my son.</p></div>
-<div class="mk-row">
-<figure class="mk-wide"><img data-pix src="/assets/2a99713f9e0a210c68d9140c492f9715.jpg" alt="BetsFriends: the group’s shared profit and loss over the World Cup (sample data)"><figcaption><b>BetsFriends</b><span class="mono">World Cup bet tracker</span></figcaption></figure>
-<figure><img data-pix src="/assets/527d9329f76c75f3dde7aed37a04263b.png" alt="A daytime level from the platform game my son and I built"><figcaption><b>The game</b><span class="mono">Built with my son</span></figcaption></figure>
-<figure><img data-pix src="/assets/0d95ebc4b4ab0be1d99645ff35127897.png" alt="A Nether level from the same game, with lava to get past"><figcaption><b>Level two</b><span class="mono">Lava and all</span></figcaption></figure>
+<div class="b-proj">
+<div class="b-card bfr">
+<div class="txt"><span class="mono">BetsFriends · World Cup 2026</span><h3>A bet tracker for my friends</h3><p>Scan a bet slip, see the group’s shared profit and loss.</p></div>
+<div class="b-stage ph3"><div class="b-ph l"><img data-pix src="/assets/betsfriends-dash.jpg" alt="BetsFriends dashboard: the group’s profit and loss over the World Cup (sample data)"></div><div class="b-ph r"><img data-pix src="/assets/betsfriends-bets.jpg" alt="BetsFriends team bets: every bet the group has logged (sample data)"></div><div class="b-ph r2"><img data-pix src="/assets/betsfriends-fixtures.jpg" alt="BetsFriends fixtures (sample data)"></div></div>
+</div>
+<div class="b-card gm">
+<div class="txt"><span class="mono">Side project · with my son</span><h3>A platform game we made together</h3><p>Two levels so far, lava and all.</p></div>
+<div class="b-stage gm-stage"><div class="gm-scr"><img data-pix src="/assets/527d9329f76c75f3dde7aed37a04263b.png" alt="A daytime level from the platform game my son and I built"></div><div class="gm-scr b"><img data-pix src="/assets/0d95ebc4b4ab0be1d99645ff35127897.png" alt="A Nether level from the same game"></div></div>
 </div>
 </div>
 </section>
@@ -377,7 +395,7 @@ class Component extends DCLogic {
         document.querySelectorAll('.b-stage.ph2').forEach((st) => { const r = st.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
           const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh)); const k = innerWidth < 900 ? 0.45 : 1;
           const l = st.querySelector('.b-ph.l'), rr = st.querySelector('.b-ph.r');
-          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (st.closest('.sky')) l.style.setProperty('--t', Math.max(-1, Math.min(1, p * 2.2)).toFixed(3)); } if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
+          if (l) { l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (st.closest('.sky')) l.style.setProperty('--t', Math.max(0, Math.min(1, p * 2.4)).toFixed(3)); } if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
       addEventListener('scroll', () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true }); addEventListener('resize', upd); upd(); setTimeout(upd, 500); }
     if (window.__pbPix || typeof IntersectionObserver === 'undefined') return;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
