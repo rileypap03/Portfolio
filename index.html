@@ -165,7 +165,7 @@ img{max-width:100%}
   .b-proj,.b-made .row,.b-human,.b-qs{grid-template-columns:1fr}
   .b-card.wide{grid-column:auto;flex-direction:column}
   .b-card,.b-card.wide{min-height:0}
-  .b-stage,.b-card.wide .b-stage,.bf .b-stage{padding:32px 0 0;height:440px;min-height:0}
+  .b-stage,.b-card.wide .b-stage,.bf .b-stage{padding:32px 0 0;height:320px;min-height:0;flex:none}
   .b-ph,.b-card.wide .b-ph.l{--w:min(48vw,230px)}
   .b-ph.r,.b-card.wide .b-ph.r{--w:min(38vw,190px);margin-top:72px}
   .fl .b-stage{min-height:260px;padding-bottom:32px}
@@ -284,9 +284,9 @@ class Component extends DCLogic {
     if (!window.__pbPar && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { window.__pbPar = true;
       let tk = false; const upd = () => { tk = false; const vh = innerHeight;
         document.querySelectorAll('.b-stage.ph2').forEach((st) => { const r = st.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
-          const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh));
+          const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh)); const k = innerWidth < 900 ? 0.45 : 1;
           const l = st.querySelector('.b-ph.l'), rr = st.querySelector('.b-ph.r');
-          if (l) l.style.setProperty('--py', (p * 36).toFixed(1) + 'px'); if (rr) rr.style.setProperty('--py', (p * 70).toFixed(1) + 'px'); }); };
+          if (l) l.style.setProperty('--py', (-p * 36 * k).toFixed(1) + 'px'); if (rr) rr.style.setProperty('--py', (-p * 70 * k).toFixed(1) + 'px'); }); };
       addEventListener('scroll', () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true }); addEventListener('resize', upd); upd(); setTimeout(upd, 500); }
     if (window.__pbPix || typeof IntersectionObserver === 'undefined') return;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
