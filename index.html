@@ -52,7 +52,7 @@ img{max-width:100%}
 
 .b-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .b-nums>div{display:flex;flex-direction:column;gap:32px;min-height:190px;padding:24px;border-radius:12px;background:rgba(255,255,255,.022);border:1px solid #1C1D1A}
-.b-nums b{display:block;font-weight:600;font-size:clamp(40px,4vw,60px);line-height:1;letter-spacing:-.035em}
+.b-nums b{display:flex;align-items:center;font-weight:600;font-size:clamp(48px,4.8vw,72px);line-height:1;letter-spacing:-.035em}
 .b-nums b em{font-style:normal;color:var(--accent)}
 .b-nums p{margin:auto 0 0;display:flex;flex-direction:column;gap:6px}
 .b-nums p .mono{color:var(--soft);font-size:12px}
@@ -295,6 +295,12 @@ html body .b-stage.ph3 .b-ph.l{margin-bottom:calc(var(--w)*-.55)!important}
 html body .b-stage.ph3 .b-ph.r{--w:clamp(156px,14.5vw,210px)!important;margin-bottom:calc(var(--w)*-.55)!important;margin-top:0!important}
 html body .b-stage.ph3 .b-ph.r2{--w:clamp(148px,13.5vw,200px)!important;margin-bottom:calc(var(--w)*-.55)!important}
 @media (max-width:900px){html body .b-stage.ph3 .b-ph.r{--w:36vw!important}html body .b-stage.ph3 .b-ph.r2{--w:33vw!important}}
+.b-nums .arr{width:.62em;height:.36em;margin:0 .08em;color:var(--accent);flex:none}
+html body .b-where{margin-top:0}
+@media (max-width:900px){html body .b-nums{scroll-padding-inline:var(--gut)}}
+html body .b-lg li{width:clamp(220px,21vw,300px)!important;height:190px!important}
+html body .b-lg{gap:16px}
+@media (max-width:900px){html body .b-lg li{width:180px!important;height:130px!important}}
 </style>
 
 </head>
@@ -315,7 +321,7 @@ html body .b-stage.ph3 .b-ph.r2{--w:clamp(148px,13.5vw,200px)!important;margin-b
 <div class="b-nums" role="list">
 <div role="listitem"><b>9<em>m</em></b><p><span class="mono">Sky Bet</span><span>customers moved onto a shared platform</span></p></div>
 <div role="listitem"><b>94<em>%</em></b><p><span class="mono">Betfair</span><span>team retention over five years</span></p></div>
-<div role="listitem"><b>6→18</b><p><span class="mono">Betfair</span><span>designers in the sports team</span></p></div>
+<div role="listitem"><b>6<svg class="arr" viewBox="0 0 48 24" aria-label="to" role="img"><path d="M2 12h40M32 3l10 9-10 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>18</b><p><span class="mono">Betfair</span><span>designers in the sports team</span></p></div>
 <div role="listitem"><b>28</b><p><span class="mono">Flutter UKI</span><span>squads supported by one design team</span></p></div>
 </div>
 </div>
@@ -391,7 +397,7 @@ html body .b-stage.ph3 .b-ph.r2{--w:clamp(148px,13.5vw,200px)!important;margin-b
 
 
 
-<section class="b-where" aria-label="Where I’ve worked"><span class="mono">Where I’ve worked</span><div class="b-mq"><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="max-height:19px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="max-height:22px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="max-height:18px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="max-height:16px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="max-height:21px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="max-height:29px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="max-height:22px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="max-height:36px"></li><li aria-hidden="true"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="max-height:19px"></li><li aria-hidden="true"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="max-height:22px"></li><li aria-hidden="true"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="max-height:18px"></li><li aria-hidden="true"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="max-height:16px"></li><li aria-hidden="true"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="max-height:21px"></li><li aria-hidden="true"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="max-height:29px"></li><li aria-hidden="true"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="max-height:22px"></li><li aria-hidden="true"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="max-height:36px"></li></ul></div></section>
+<section class="b-where" aria-labelledby="wh-h"><div class="b-label"><h2 id="wh-h">Where I’ve worked</h2></div><div class="b-mq"><ul class="b-lg"><li><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="Flutter Entertainment" style="max-height:28px"></li><li><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="Sky Bet" style="max-height:32px"></li><li><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="Paddy Power Betfair" style="max-height:26px"></li><li><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="Wunderman" style="max-height:23px"></li><li><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="R/GA" style="max-height:30px"></li><li><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="Sapient" style="max-height:42px"></li><li><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="Profero" style="max-height:32px"></li><li><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="SixandCo / FullSix" style="max-height:52px"></li><li aria-hidden="true"><img src="/assets/83387c00a6a7791b7486ffabf1f64e51.webp" alt="" style="max-height:28px"></li><li aria-hidden="true"><img src="/assets/f7d758c4040b9beee28692b33c1f1a7a.png" alt="" style="max-height:32px"></li><li aria-hidden="true"><img src="/assets/e87d1330a467fd35674788199ac066dc.png" alt="" style="max-height:26px"></li><li aria-hidden="true"><img src="/assets/edd967c9de54b6c9815914b28294924d.webp" alt="" style="max-height:23px"></li><li aria-hidden="true"><img src="/assets/f6c0dac554cc50dbfb86430ee607ff1d.webp" alt="" style="max-height:30px"></li><li aria-hidden="true"><img src="/assets/dd8b71f9f567a156da88666f66a326aa.webp" alt="" style="max-height:42px"></li><li aria-hidden="true"><img src="/assets/04ed472e957d7950fffcd0677bea32a1.webp" alt="" style="max-height:32px"></li><li aria-hidden="true"><img src="/assets/c9a1abd052ee0ff4b3c0261f36b9ea1f.png" alt="" style="max-height:52px"></li></ul></div></section>
 
 <footer id="contact" class="b-foot"><h2>Let’s<br><span>talk.</span></h2>
 <nav class="b-links" aria-label="Contact"><a class="lz" href="mailto:rileypap03@gmail.com">Email <span aria-hidden="true">↗</span></a><a class="lz" href="https://www.linkedin.com/in/-paulriley" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a><a class="lz" href="/assets/Paul-Riley-CV.pdf" download="Paul-Riley-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></nav>
