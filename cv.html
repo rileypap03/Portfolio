@@ -284,6 +284,13 @@ html body .mnav-t:checked~.mnav .mnav-l a:active{transform:scale(.96)!important;
 html body .mnav-f{transition:background-color .2s ease,opacity .45s,transform .55s!important}
 html body .mnav-f:active,html body .mnav-f:hover{background:rgba(255,255,255,.1)}
 html body .b-menu:active,html body .b-nav a:active{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
+
+/* CV download pill */
+html body a.dl-mobile.lk[download]{min-height:44px!important;padding:0 20px!important;border-radius:999px!important;border:1px solid #FF6A2B!important;background:#FF6A2B!important;color:#120A05!important;text-decoration:none!important;font-weight:600!important;box-shadow:none!important;transition:background-color .3s,border-color .3s,color .3s!important}
+html body a.dl-mobile.lk[download]:hover,html body a.dl-mobile.lk[download]:focus-visible,html body a.dl-mobile.lk[download]:active{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
+html body a.dl-mobile.lk[download]::before,html body a.dl-mobile.lk[download]::after{display:none!important}
+html body a.lk:not(.dl-mobile)::before{border-radius:999px!important;transform:none!important;width:0;right:auto;opacity:0;transition:width .45s cubic-bezier(.16,1,.3,1),opacity .25s!important}
+html body a.lk:not(.dl-mobile):hover::before,html body a.lk:not(.dl-mobile):focus-visible::before{width:100%;opacity:1}
 </style>
 
 </head>
