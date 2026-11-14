@@ -315,6 +315,14 @@ html body .b-lead h3::before{display:none}
 html body .b-lead p{line-height:1.55}
 @media (max-width:1100px){html body .b-lead{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){html body .b-lead{grid-template-columns:1fr}}
+
+/* menu press states */
+html body .mnav-l a,html body .mnav-c a{-webkit-tap-highlight-color:transparent;transition:color .2s ease,opacity .45s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)!important}
+html body .mnav-l a:hover,html body .mnav-l a:focus-visible,html body .mnav-l a:active,html body .mnav-c a:hover,html body .mnav-c a:active{color:#FF6A2B!important}
+html body .mnav-t:checked~.mnav .mnav-l a:active{transform:scale(.96)!important;transition-delay:0s!important}
+html body .mnav-f{transition:background-color .2s ease,opacity .45s,transform .55s!important}
+html body .mnav-f:active,html body .mnav-f:hover{background:rgba(255,255,255,.1)}
+html body .b-menu:active,html body .b-nav a:active{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
 </style>
 
 </head>

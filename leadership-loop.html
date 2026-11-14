@@ -493,6 +493,14 @@ html body .pr-lead{font-family:inherit!important;font-size:inherit!important;lin
 html body article figure img:not(.fp img):not(.jm-mini img),html body article .shot,html body article img.shot,html body .pr-media img,html body .pr-media video{border-radius:12px!important}
 html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:700px){html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:1fr 1fr}html body .pr-res:has(>div:nth-child(3):last-child)>div:last-child{grid-column:1/-1}}
+
+/* menu press states */
+html body .mnav-l a,html body .mnav-c a{-webkit-tap-highlight-color:transparent;transition:color .2s ease,opacity .45s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)!important}
+html body .mnav-l a:hover,html body .mnav-l a:focus-visible,html body .mnav-l a:active,html body .mnav-c a:hover,html body .mnav-c a:active{color:#FF6A2B!important}
+html body .mnav-t:checked~.mnav .mnav-l a:active{transform:scale(.96)!important;transition-delay:0s!important}
+html body .mnav-f{transition:background-color .2s ease,opacity .45s,transform .55s!important}
+html body .mnav-f:active,html body .mnav-f:hover{background:rgba(255,255,255,.1)}
+html body .b-menu:active,html body .b-nav a:active{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
 </style>
 
 </head>
