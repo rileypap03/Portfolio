@@ -409,6 +409,47 @@ nav.blk.nx-lp{--bg:#171815!important;--panel:#171815!important;--ink:#F2EFE6!imp
 button:has(.snp-bt){border-radius:999px!important;border-color:#3A3B36!important}
 nav.blk[class*="nx-"]{position:relative;isolation:isolate;box-shadow:none!important;clip-path:none!important}
 nav.blk[class*="nx-"]::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;z-index:-1;background:inherit}
+
+/* journey map v2 */
+.jm-sec .jm-card[data-pos="1"]{transform:translate(70px,48px) scale(.86)!important;filter:brightness(.7)}
+.jm-sec .jm-card[data-pos="2"]{transform:translate(-70px,48px) scale(.82)!important;filter:brightness(.55)}
+.jm-ph{border-radius:36px!important;padding:7px!important;background:linear-gradient(150deg,#4a4c50 0%,#151618 22%,#0b0b0c 60%,#2b2c2f 100%)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 50px 90px -30px rgba(0,0,0,.8)!important}
+.jm-sc{border:0!important;border-radius:30px!important}
+.jm-step{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-size:13px!important;color:var(--muted)!important}
+.jm-title{font-family:'Bricolage Grotesque',system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.03em!important;font-size:clamp(28px,2.6vw,40px)!important}
+.jm-line{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:baseline;max-width:52ch!important}
+.jm-tag{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-size:12px!important;font-weight:400!important;text-transform:none!important;letter-spacing:.02em!important;border:0!important;background:none!important;padding:0!important;margin:0!important;display:inline-flex!important;align-items:center;gap:8px;color:var(--muted)!important}
+.jm-tag::before{content:"";width:8px;height:8px;border-radius:50%;flex:none;background:currentColor}
+.jm-sb::before{background:#3D6BFF}.jm-bf::before{background:#F2B92C}.jm-td::before{background:#FF6A2B}
+.jm-gap::before{background:#FF6A2B}.jm-win::before{background:#3CCB9A}.jm-research::before{background:#A29E92}
+.jm-btn{border-radius:999px!important;border:1px solid #3A3B36!important}
+.jm-btn:hover{border-color:var(--ink)!important;background:transparent!important}
+.jm-dot{border-radius:50%}
+.jm-open{border-radius:999px!important;background:#FF6A2B!important;color:#120A05!important;font-family:'Bricolage Grotesque',system-ui,sans-serif!important;font-weight:600!important;padding:0 22px!important}
+.jm-hint{font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-size:12px!important}
+/* overlay */
+.jm-ov{background:#0E0F0D!important}
+.jm-ov-t{font-family:'Bricolage Grotesque',system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.03em!important}
+.jm-track{grid-auto-columns:minmax(380px,460px)!important}
+.jm-col{padding:28px 28px 40px!important;gap:20px!important;text-align:left!important;align-items:stretch}
+.jm-col>.jm-step,.jm-col>.jm-title{text-align:left!important}
+.jm-col>.jm-title{font-size:30px!important;margin-top:-12px!important}
+.jm-pair{gap:12px!important;padding:16px;margin:0 -8px;border-radius:12px;background:radial-gradient(70% 80% at 50% 30%,rgba(255,255,255,.06),transparent 75%)}
+.jm-pair figcaption{text-align:left!important;font-family:'IBM Plex Mono',ui-monospace,monospace!important;font-size:11px!important;color:var(--muted)!important}
+.jm-mini{border-radius:16px!important;padding:3px!important;background:linear-gradient(150deg,#4a4c50,#151618 22%,#0b0b0c 60%,#2b2c2f)!important}
+.jm-mini img{border-radius:13px}
+.jm-ov .jm-notes>li,.jm-notes>li{text-align:left!important;font-size:16px!important;line-height:1.5!important;color:var(--text2,#D9D5CB)!important;padding:16px 0 18px!important;border-top:1px solid #22231F!important}
+.jm-ov .jm-notes .jm-tag,.jm-notes>li .jm-tag{display:flex!important;width:auto!important;margin:0 0 8px!important}
+.jm-logo img{display:none!important}
+.jm-logo.jm-sb::after{content:"Sky Bet before"}.jm-logo.jm-bf::after{content:"Betfair"}.jm-logo.jm-td::after{content:"Sky Bet today"}
+.jm-ov-f .jm-btn{border-radius:999px!important}
+
+html body .jm-sec .jm-tag,html body .jm-ov .jm-tag,html body .jm-notes .jm-tag{color:#A29E92!important}
+html body .jm-tag::before{content:""!important;display:block!important;width:8px!important;height:8px!important;border-radius:50%!important}
+.jm-col>.jm-title{min-height:0!important}
+
+html body .jm-line .jm-tag,html body .jm-line .jm-tag.jm-sb,html body .jm-line .jm-tag.jm-bf,html body .jm-line .jm-tag.jm-td{color:#A29E92!important;font-weight:400!important}
+html body .jm-ov .jm-notes>li .jm-tag,html body .jm-notes>li .jm-tag.jm-logo{display:flex!important;flex-direction:row!important;align-items:center!important;gap:8px!important;font-weight:400!important}
 </style>
 
 </head>
