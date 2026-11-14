@@ -261,6 +261,20 @@ html body .b-nav a.cv::before{display:none!important}
 html body .b-nav a.cv{transition:background-color .3s ease,border-color .3s ease,color .3s ease!important}
 html body .b-nav a.cv:hover,html body .b-nav a.cv:focus-visible{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
 @media (min-width:901px){html body .b-top .b-menu{display:none!important}}
+
+/* polish v2: pills fade, no sweep; tighter endings */
+html body .b-nav a::before,html body .cs-cta a::before,html body .b-menu::before{display:none!important}
+html body .b-nav a,html body .cs-cta a,html body .b-menu{transition:background-color .3s ease,border-color .3s ease,color .3s ease!important}
+html body .b-nav a:not(.cv):hover,html body .b-nav a:not(.cv):focus-visible,html body .cs-cta a:not(.pri):hover,html body .cs-cta a:not(.pri):focus-visible,html body .b-menu:hover{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
+html body .cs-cta a.pri:hover,html body .cs-cta a.pri:focus-visible{background:#F2EFE6!important;border-color:#F2EFE6!important;color:#120A05!important}
+.cs-cta{padding:72px 20px 80px!important}
+.cs-cta h2{margin-bottom:28px!important}
+html body nav[aria-label="Next case study"] .next-cs,html body nav[aria-label="Next case study"] .next-cs:hover{background:transparent!important}
+html body .next-cs{padding:40px 20px 56px!important}
+html body .next-cs svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+html body .next-cs:hover svg{transform:translateX(8px)}
+html body .next-cs [data-reveal]{transition:opacity .3s}
+html body .next-cs:hover [data-reveal]{opacity:.82}
 @media (prefers-reduced-motion:reduce){.mnav,.mnav *{transition:none!important}::view-transition-old(root),::view-transition-new(root){animation:none}}
 </style>
 
