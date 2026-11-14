@@ -261,9 +261,10 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 .mk-row figcaption .mono{color:var(--soft);font-size:12px}
 @media (max-width:900px){.lp-stage{justify-content:center!important;padding:8px 0 32px 20px!important;height:auto!important}.lp-tab{margin-right:-60px}.mk-row{grid-template-columns:1fr 1fr}.mk-row .mk-wide{grid-column:1/-1}}
 /* hero phone: real 3D turn */
-.sky .b-ph.l,.bf .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*-16deg))!important}
+.sky .b-ph.l{--t:1;transform:translate3d(0,var(--py,0px),0) rotateY(calc(var(--t)*18deg))!important}
+.bf .b-ph.l{--t:1;transform-origin:50% 100%;transform:translate3d(0,calc(var(--py,0px) + var(--t)*40px),0) rotateX(calc(var(--t)*16deg)) scale(calc(1 - var(--t)*.04))!important}
 .sky .b-ph.l::before,.bf .b-ph.l::before{display:none}
-.sky .b-stage,.bf .b-stage{perspective:2000px!important}
+.sky .b-stage,.bf .b-stage{perspective:1800px!important;perspective-origin:50% 50%!important}
 
 /* making tiles */
 .bfr{background-color:#10251A;background-image:var(--grain),radial-gradient(55% 70% at 70% 35%,rgba(40,200,120,.28),transparent 70%),radial-gradient(60% 80% at 0% 100%,#06120c,transparent 70%);background-size:180px 180px,auto,auto;--glow:rgba(40,200,120,.3)}
@@ -310,11 +311,11 @@ html body .next-cs:hover [data-reveal]{opacity:.82}
 <div class="b-proj">
 <a class="b-card wide sky" href="/sky-bet">
 <div class="txt"><span class="mono">01 · Sky Bet · 2024–25</span><h3>Moving 9 million customers onto a shared platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
-<div class="b-stage ph2"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/skybet-home-poster.jpg" aria-label="Scrolling the Sky Bet home screen today"><source src="/assets/skybet-home.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/b53602d3d28b8a37ce35f3e8d3a32973.jpg" alt="Sky Bet football today"></div></div>
+<div class="b-stage ph2"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/skybet-home-poster-v2.jpg" aria-label="Scrolling the Sky Bet home screen today"><source src="/assets/skybet-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/b53602d3d28b8a37ce35f3e8d3a32973.jpg" alt="Sky Bet football today"></div></div>
 </a>
 <a class="b-card bf" href="/betfair">
 <div class="txt"><span class="mono">02 · Betfair · 2018–23</span><h3>Transforming Betfair on a new platform</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
-<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/betfair-home-poster.jpg" aria-label="Scrolling the Betfair home screen today"><source src="/assets/betfair-home.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
+<div class="b-stage ph2" style="padding-top:28px"><div class="b-ph l"><video autoplay muted loop playsinline preload="metadata" poster="/assets/betfair-home-poster-v2.jpg" aria-label="Scrolling the Betfair home screen today"><source src="/assets/betfair-home-v2.mp4" type="video/mp4"></video></div><div class="b-ph r"><img data-pix src="/assets/61b68ed41cfe22e32bda825857451785.jpg" alt="Betfair featured football today"></div></div>
 </a>
 <a class="b-card fl" href="/flutter-uki">
 <div class="txt"><span class="mono">03 · Flutter UKI · 2025–now</span><h3>Growing a team to support 28 squads</h3><span class="go"><i aria-hidden="true">→</i><b>View project</b></span></div>
