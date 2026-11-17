@@ -697,8 +697,9 @@ html body article figure img:not(.fp img):not(.jm-mini img),html body article .s
 html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:700px){html body .pr-res:has(>div:nth-child(3):last-child){grid-template-columns:1fr 1fr}html body .pr-res:has(>div:nth-child(3):last-child)>div:last-child{grid-column:1/-1}}
 
-html body .jx-step .fan.two .fp.a{transform:translateY(4%) rotate(-5deg)!important;margin-right:calc(var(--fw)*-.12);filter:none!important;z-index:1}
-html body .jx-step .fan.two .fp.c{transform:translateY(4%) rotate(5deg)!important;margin-left:calc(var(--fw)*-.12);filter:none!important;z-index:2}
+html body .jx-step .fan.two{gap:14px}
+html body .jx-step .fan.two .fp.a,html body .jx-step .fan.two .fp.c{transform:none!important;margin:0!important;filter:none!important;z-index:1;--fw:135px!important}
+@media (max-width:700px){html body .jx-step .fan.two .fp.a,html body .jx-step .fan.two .fp.c{--fw:34vw!important}html body .jx-track{grid-auto-columns:82vw!important}}
 html body .jx-txt p b{color:#F2EFE6;font-weight:600}
 html body .jx-step .fan:not(.two):not(:has(.fp.a)){--fw:180px!important}
 @media (max-width:700px){html body .jx-step .fan:not(.two):not(:has(.fp.a)){--fw:44vw!important}}
