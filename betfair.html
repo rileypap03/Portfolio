@@ -642,6 +642,9 @@ html body .pr-res dd{margin:auto 0 0!important;font-size:15px!important;line-hei
 .fan{position:relative;display:flex;justify-content:center;align-items:flex-start;padding:48px 0 0;overflow:hidden}
 .fan .fp{position:relative;flex:none;width:var(--fw);--fw:clamp(150px,17vw,230px);padding:calc(var(--fw)*.032);border-radius:calc(var(--fw)*.17);background:linear-gradient(150deg,#4a4c50 0%,#151618 22%,#0b0b0c 60%,#2b2c2f 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 70px -30px rgba(0,0,0,.85)}
 .fan .fp img{display:block;width:100%;border-radius:calc(var(--fw)*.14)}
+.fan .fp::after{content:"";position:absolute;left:50%;top:calc(var(--fw)*.055);width:calc(var(--fw)*.3);height:calc(var(--fw)*.075);transform:translateX(-50%);border-radius:999px;background:#000;z-index:2;pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.4)}
+.fan .fp{background:linear-gradient(150deg,#4a4c50 0%,#151618 22%,#0b0b0c 60%,#2b2c2f 100%) #0b0b0c}
+.fan .fp img{background:#0b0b0c}
 .fan .fp.a{transform:translateX(18%) translateY(36px) rotate(-8deg);z-index:1;filter:brightness(.82)}
 .fan .fp.b{z-index:2;--fw:clamp(164px,19vw,252px)}
 .fan .fp.c{transform:translateX(-18%) translateY(36px) rotate(8deg);z-index:1;filter:brightness(.82)}
