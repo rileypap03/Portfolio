@@ -324,7 +324,8 @@ html body .b-lead>div{padding:24px!important;border:1px solid #1C1D1A!important;
 html body .b-lead h3{margin:0;font-size:22px;line-height:1.2}
 html body .b-lead h3::before{display:none}
 html body .b-lead p{line-height:1.55}
-@media (max-width:1100px){html body .b-lead{grid-template-columns:1fr 1fr}}
+@media (min-width:1101px){html body .b-lead{grid-template-columns:repeat(6,1fr)}html body .b-lead>div{grid-column:span 2}html body .b-lead>div:nth-child(n+4){grid-column:span 3}}
+@media (max-width:1100px){html body .b-lead{grid-template-columns:1fr 1fr}html body .b-lead>div:last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:600px){html body .b-lead{grid-template-columns:1fr}}
 
 /* menu press states */
