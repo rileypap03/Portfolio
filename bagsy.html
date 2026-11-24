@@ -776,6 +776,10 @@ nav.blk.nx-fl a{color:#F2EFE6!important}
 .bs-stats span{font-size:16px;line-height:1.45;color:var(--ink)}.bs-stats small{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--muted)}
 @media (max-width:560px){.bs-stats{grid-template-columns:minmax(0,1fr)}}
 .bs-quote{margin:24px 0 0;padding:0 0 0 20px;border-left:2px solid var(--bright,var(--accent))}.bs-quote p{margin:0;font-size:20px;line-height:1.4;color:var(--ink)}.bs-quote cite{display:block;margin-top:8px;font-style:normal;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--muted)}
+.bs-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:28px 0 8px}
+.bs-split .pr-eye{margin:0 0 12px!important}
+@media (max-width:560px){.bs-split{grid-template-columns:minmax(0,1fr);gap:24px}}
+.bs-head{padding:0 20px;box-sizing:border-box}@media (max-width:799px){.bs-head{padding:0}}
 /* bagsy: toolkit, system board, splash stage */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
 .bs-sec{border-top:1px solid var(--line);padding:56px 20px 40px}
@@ -868,7 +872,7 @@ html body .bs-solo{padding:8px 0!important}
 
 <section data-story class="snap prose" aria-labelledby="role-h">
 <h2 id="role-h" class="pr-h">How I worked: AI as the team, me as the lead</h2>
-<p>I ran it the way I’d run a small team. I set the direction, agreed the principles, reviewed everything that came back and decided what shipped. The difference was speed. A change I asked for in the morning was on my phone the same day, so I judged real screens with real data instead of mock-ups.</p><p><strong>I delegated</strong></p><ul class="pr-list"><li>Writing and testing the code.</li><li>Database, sign-in and notifications.</li><li>Wiring up AI and flight-price services.</li><li>Building the Figma component library and screens through the Figma MCP.</li></ul><p><strong>I owned</strong></p><ul class="pr-list"><li>What we build, and what we don’t.</li><li>The look: 3D icons, scenes, bags, type and colour.</li><li>Every trade-off about money and trust.</li><li>Saying “not good enough yet”.</li></ul>
+<p>I ran it the way I’d run a small team. I set the direction, agreed the principles, reviewed everything that came back and decided what shipped. The difference was speed. A change I asked for in the morning was on my phone the same day, so I judged real screens with real data instead of mock-ups.</p><div class="bs-split"><div><p class="pr-eye">I delegated</p><ul class="pr-list"><li>Writing and testing the code.</li><li>Database, sign-in and notifications.</li><li>Wiring up AI and flight-price services.</li><li>Building the Figma component library and screens through the Figma MCP.</li></ul></div><div><p class="pr-eye">I owned</p><ul class="pr-list"><li>What we build, and what we don’t.</li><li>The look: 3D icons, scenes, bags, type and colour.</li><li>Every trade-off about money and trust.</li><li>Saying “not good enough yet”.</li></ul></div></div>
 </section>
 
 <section data-story class="snap bs-sec" aria-labelledby="tk-h">
