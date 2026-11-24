@@ -770,7 +770,13 @@ nav.blk.nx-fl{--bg:#1B2230!important;--panel:#1B2230!important;--ink:#F2EFE6!imp
 nav.blk.nx-fl a{color:#F2EFE6!important}
 </style>
 
-<style>/* bagsy: toolkit, system board, splash stage */
+<style>.bs-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0}
+.bs-stats>div{background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:8px}
+.bs-stats b{font-family:'Geist',sans-serif;font-weight:500;font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--bright,var(--accent))}
+.bs-stats span{font-size:16px;line-height:1.45;color:var(--ink)}.bs-stats small{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--muted)}
+@media (max-width:560px){.bs-stats{grid-template-columns:minmax(0,1fr)}}
+.bs-quote{margin:24px 0 0;padding:0 0 0 20px;border-left:2px solid var(--bright,var(--accent))}.bs-quote p{margin:0;font-size:20px;line-height:1.4;color:var(--ink)}.bs-quote cite{display:block;margin-top:8px;font-style:normal;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--muted)}
+/* bagsy: toolkit, system board, splash stage */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
 .bs-sec{border-top:1px solid var(--line);padding:56px 20px 40px}
 .bs-head{max-width:760px;margin:0 auto 32px}
@@ -842,6 +848,12 @@ html body .bs-solo{padding:8px 0!important}
 <section data-story class="snap prose" aria-labelledby="ch-h">
 <h2 id="ch-h" class="pr-h">Is this a real problem?</h2>
 <p class="pr-lead">Couples who go away together plan in one place and save in two.</p><p>Usually there’s a rough idea of who’s paying for what, and each person saves in their own account. The tools that exist each cover one slice. Bank pots hold the money. Budgeting apps track spending. Splitwise settles up afterwards.</p><p>None of them help with the part before booking: deciding where to go, what it’ll cost, who’s covering which bit, and whether you’re both on track.</p>
+<div class="bs-stats" role="list">
+<div role="listitem"><b>31%</b><span>of UK adults are saving for a holiday right now, more than for almost any other goal.</span><small>AJ Bell / Opinium, 2,000 UK adults, March 2026</small></div>
+<div role="listitem"><b>63%</b><span>of Brits have argued with their partner while planning a city break, with budgets among the main causes.</span><small>Leonardo Hotels survey, 2,000 UK adults</small></div>
+</div>
+<p>The banks solve one shared pot, with strings attached. A Monzo joint savings pot needs both people to open a joint account, and the money then belongs to both equally. In a Revolut group pocket, only the person who set it up can take money out. Neither lets each person keep their own money and own their own part.</p>
+<blockquote class="bs-quote"><p>“I don’t want to financially connect my life with my partner, but would gladly have a shared pot for a holiday.”</p><cite>Monzo community forum</cite></blockquote>
 </section>
 
 <section data-story class="snap prose" aria-labelledby="bet-h">
@@ -905,6 +917,15 @@ html body .bs-solo{padding:8px 0!important}
 <section data-story class="snap her" aria-labelledby="dt2-h">
 <p id="dt2-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>Your bag, a surprise, a nudge</p>
 <div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/bagsy-s-you-edit.jpg" alt="Choosing your bag and strap colour" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/bagsy-s-reveal.jpg" alt="Surprise reveal: Ines has bagsied you Lake Como, 14–17 May 2027" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/bagsy-s-activity.jpg" alt="Activity: payday check-ins with one-tap answers" loading="lazy"></div></div><div class="fan-cap"><span>Pick your bag</span><span>The surprise reveal</span><span>Payday check-ins</span></div></div>
+</section>
+
+<section data-story class="snap prose" aria-labelledby="ob-h">
+<h2 id="ob-h" class="pr-h">Ready for other couples</h2>
+<p>To test it beyond the two of us, friends had to understand it without me there to explain. So it now opens with three short cards: what it is, how the parts work, and that the money never leaves your own bank. The cards use the app’s real components, not illustrations. After sign-up, an empty Trips tab becomes a choice of planning a trip, finding ideas or joining a partner’s trip. The first trip then shows three one-time tips. Testers can send feedback from inside the app, and there’s a plain note on what I can and can’t see.</p>
+</section>
+<section data-story class="snap her" aria-labelledby="ob2-h">
+<p id="ob2-h" style="margin: 0; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em"><span aria-hidden="true" style="width: 8px; height: 8px; background: var(--accent)"></span>First run · What a new couple sees</p>
+<div class="fanw"><div class="fan"><div class="fp a"><img data-pix src="/assets/bagsy-s-intro1.jpg" alt="Intro card 1: Save for a trip together, with an example Lisbon trip card" loading="lazy"></div><div class="fp b"><img data-pix src="/assets/bagsy-s-intro2.jpg" alt="Intro card 2: Each of you bagsies your part" loading="lazy"></div><div class="fp c"><img data-pix src="/assets/bagsy-s-intro3.jpg" alt="Intro card 3: Your money stays in your bank" loading="lazy"></div></div><div class="fan-cap"><span>What it is</span><span>How the parts work</span><span>Why it’s safe</span></div></div>
 </section>
 
 <section data-story class="snap her bs-made" aria-labelledby="mk-h">
